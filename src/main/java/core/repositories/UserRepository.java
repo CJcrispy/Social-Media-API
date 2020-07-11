@@ -1,6 +1,6 @@
 package core.repositories;
 
-import blue.profit.entities.User;
+import core.entities.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;

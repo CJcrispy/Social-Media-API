@@ -1,10 +1,10 @@
 package core.services;
 
-import blue.profit.DTO.UserDTO;
-import blue.profit.entities.Token;
-import blue.profit.entities.User;
-import blue.profit.repositories.TokenRepository;
-import blue.profit.repositories.UserRepository;
+import core.DTO.UserDTO;
+import core.entities.Token;
+import core.entities.User;
+import core.repositories.TokenRepository;
+import core.repositories.UserRepository;
 import com.google.common.hash.Hashing;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
 package core.config;
 
-import blue.profit.entities.*;
+import core.entities.*;
 
 import javax.inject.Inject;
 import javax.sql.DataSource;
