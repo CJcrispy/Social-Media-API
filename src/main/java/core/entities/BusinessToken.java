@@ -5,8 +5,8 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name = "tokens")
-public class Token {
+@Table(name = "buinessTokens")
+public class BusinessToken {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,12 +17,12 @@ public class Token {
     private Timestamp expiration;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="user_id", nullable = false)
-    private User user;
+    @JoinColumn(name="business_id", nullable = false)
+    private Business business;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="username", nullable = false)
-    private User username;
+    @JoinColumn(name="business_email", nullable = false)
+    private Business email;
 
     public int getId() {
         return id;
@@ -40,27 +40,25 @@ public class Token {
         this.expiration = expiration;
     }
 
-    public User getUser() {
-        return user;
+    public Business getBusiness() {
+        return business;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setBusiness(Business business) {this.business = business;}
+
+    public Business getEmail() {
+        return email;
     }
 
-    public User getUsername() {
-        return username;
-    }
-
-    public void setUsername(User username) {
-        this.username = username;
+    public void setEmail(Business email) {
+        this.email = email;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Token token = (Token) o;
+        BusinessToken token = (BusinessToken) o;
         if (expiration == null) {
             if (token.expiration != null)
                 return false;
@@ -68,20 +66,20 @@ public class Token {
             return false;
         if (id != token.id)
             return false;
-        if (user == null) {
-            if (token.user != null)
+        if (business == null) {
+            if (token.business != null)
                 return false;
-        } else if (!user.equals(token.user))
+        } else if (!business.equals(token.business))
             return false;
-        if (username == null) {
-            if (token.username != null)
+        if (email == null) {
+            if (token.email != null)
                 return false;
-        } else if (!username.equals(token.username))
+        } else if (!email.equals(token.email))
             return false;
         return id == token.id &&
                 Objects.equals(expiration, token.expiration) &&
-                Objects.equals(user, token.user) &&
-                Objects.equals(username, token.username);
+                Objects.equals(business, token.business) &&
+                Objects.equals(email, token.email);
     }
 
     @Override
@@ -90,28 +88,28 @@ public class Token {
         int result = 1;
         result = prime * result + ((expiration == null) ? 0 : expiration.hashCode());
         result = prime * result + id;
-        result = prime * result + ((user == null) ? 0 : user.hashCode());
-        result = prime * result + ((username == null) ? 0 : username.hashCode());
+        result = prime * result + ((business == null) ? 0 : business.hashCode());
+        result = prime * result + ((email == null) ? 0 : email.hashCode());
         return result;
     }
     @Override
     public String toString() {
         return "Token{" +
-                "id=" + id +
-                ", expiration=" + expiration +
-                ", user=" + user +
-                ", username=" + username +
+                "id: " + id +
+                ", expiration: " + expiration +
+                ", user: " + business +
+                ", email: " + email +
                 '}';
     }
 
-    public Token(User u, User username) {
+    public BusinessToken(Business u, Business email) {
         super();
-        this.user = u;
-        this.username = username;
+        this.business = u;
+        this.email = email;
         this.expiration = new Timestamp(System.currentTimeMillis() + 10800000);
     }
 
-    public Token() {
+    public BusinessToken() {
         super();
     }
 }

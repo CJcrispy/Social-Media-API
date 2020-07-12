@@ -1,6 +1,7 @@
 package core.repositories;
 
-import core.entities.User;
+import core.entities.Business;
+import core.entities.Member;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,50 +14,49 @@ import org.springframework.web.client.HttpClientErrorException;
 import javax.xml.ws.http.HTTPException;
 
 @Repository
-public class UserRepository {
+public class BusinessRepository {
 
     @Autowired
     SessionFactory sessionFactory;
 
     @Transactional(propagation = Propagation.REQUIRED)
-    public User getById(int id) {
+    public Member getById(int id) {
         Session session = sessionFactory.getCurrentSession();
-        return session.get(User.class, id);
+        return session.get(Member.class, id);
     }
 
     @Transactional(propagation = Propagation.REQUIRED)
-    public User create(User user) {
+    public Member create(Member member) {
         Session session = sessionFactory.getCurrentSession();
-        session.save(user);
-        return user;
+        session.save(member);
+        return member;
     }
 
     @Transactional(propagation = Propagation.REQUIRED)
-    public User update(User user) {
+    public Member update(Member member) {
         Session session = sessionFactory.getCurrentSession();
-        session.merge(user);
-        return user;
+        session.merge(member);
+        return member;
     }
 
     @Transactional(propagation = Propagation.REQUIRED)
-    public User deleteById(int id) {
+    public Member deleteById(int id) {
         Session session = sessionFactory.getCurrentSession();
-        User user = session.get(User.class, id);
-        if(user == null) throw new HttpClientErrorException(HttpStatus.NOT_FOUND);
-        session.delete(user);
-        return user;
+        Member member = session.get(Member.class, id);
+        if(member == null) throw new HttpClientErrorException(HttpStatus.NOT_FOUND);
+        session.delete(member);
+        return member;
     }
 
     @Transactional(propagation = Propagation.REQUIRED)
-    public User getByUsername(String username) {
+    public Business getByEmail(String email) {
         Session session = sessionFactory.getCurrentSession();
-        User user;
+        Business business;
         try {
-            user = (session.createQuery("Select u from User u where u.userName = :username",User.class).setParameter("username", username).list()).get(0);
+            business = (session.createQuery("Select e from Business e where e.business_email = :email", Business.class).setParameter("email", email).list()).get(0);
         } catch (IndexOutOfBoundsException e) {
             throw new HTTPException(401);
         }
-        return user;
+        return business;
     }
-
 }

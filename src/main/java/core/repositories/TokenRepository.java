@@ -1,7 +1,9 @@
 package core.repositories;
 
-import core.entities.Token;
-import core.entities.User;
+import core.entities.Business;
+import core.entities.BusinessToken;
+import core.entities.MemberToken;
+import core.entities.Member;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +18,16 @@ public class TokenRepository {
     SessionFactory sessionFactory;
 
     @Transactional(propagation = Propagation.REQUIRED)
-    public Token newToken(User user) {
-        Token token = new Token(user, user);
+    public MemberToken newMemberUserToken(Member member) {
+        MemberToken token = new MemberToken(member, member);
+        Session session = sessionFactory.getCurrentSession();
+        session.save(token);
+        return token;
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    public BusinessToken newBusinessUserToken(Business business) {
+        BusinessToken token = new BusinessToken(business, business);
         Session session = sessionFactory.getCurrentSession();
         session.save(token);
         return token;

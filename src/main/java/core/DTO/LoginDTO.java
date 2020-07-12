@@ -4,15 +4,15 @@ import java.util.Objects;
 
 public class LoginDTO {
 
-    private String username;
+    private String email;
     private String password;
 
-    public String getUsername() {
-        return username;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setEmail(String username) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -33,12 +33,12 @@ public class LoginDTO {
                 return false;
         } else if (!password.equals(loginDTO.password))
             return false;
-        if (username == null) {
-            if (loginDTO.username != null)
+        if (email == null) {
+            if (loginDTO.email != null)
                 return false;
-        } else if (!username.equals(loginDTO.username))
+        } else if (!email.equals(loginDTO.email))
             return false;
-        return Objects.equals(username, loginDTO.username) &&
+        return Objects.equals(email, loginDTO.email) &&
                 Objects.equals(password, loginDTO.password);
     }
 
@@ -47,13 +47,13 @@ public class LoginDTO {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((password == null) ? 0 : password.hashCode());
-        result = prime * result + ((username == null) ? 0 : username.hashCode());
+        result = prime * result + ((email == null) ? 0 : email.hashCode());
         return result;
     }
 
-    public LoginDTO(String username, String password) {
+    public LoginDTO(String email, String password) {
         super();
-        this.username = username;
+        this.email = email;
         this.password = password;
     }
 
@@ -64,7 +64,7 @@ public class LoginDTO {
     @Override
     public String toString() {
         return "LoginDTO{" +
-                "username='" + username + '\'' +
+                "username='" + email + '\'' +
                 ", password='" + password + '\'' +
                 '}';
     }

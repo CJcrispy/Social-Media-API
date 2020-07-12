@@ -2,10 +2,10 @@ package core.controllers;
 
 import core.DTO.LoginDTO;
 import core.DTO.TokenDTO;
-import core.DTO.UserDTO;
-import core.entities.Token;
-import core.entities.User;
-import core.services.UserService;
+import core.DTO.MemberDTO;
+import core.entities.MemberToken;
+import core.entities.Member;
+import core.services.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,11 +20,11 @@ import java.util.Optional;
 public class UserController {
 
     @Autowired
-    private UserService userService;
+    private AuthenticationService authService;
 
     @GetMapping("/{id}")
-    public User getById(@PathVariable int id) {
-        return Optional.ofNullable(this.userService.getById(id))
+    public Member getById(@PathVariable int id) {
+        return Optional.ofNullable(this.authService.getById(id))
                 .orElseThrow(() -> new HttpClientErrorException(HttpStatus.NOT_FOUND));
     }
 
@@ -32,32 +32,32 @@ public class UserController {
     @ResponseStatus(HttpStatus.OK)
     public TokenDTO loginUser(@RequestBody LoginDTO credentials) {
         System.out.println("logging in");
-        Token ret = this.userService.login(credentials.getUsername(),credentials.getPassword());
+        MemberToken ret = this.authService.login(credentials.getEmail(),credentials.getPassword());
         if (ret == null){
             throw new HTTPException(401);
         }
         System.out.println("id: " + ret.getId());
-        System.out.println("user id: " + ret.getUser().getId());
-        System.out.println("username: " + ret.getUser().getUserName());
+        System.out.println("user id: " + ret.getMember().getId());
+        System.out.println("email: " + ret.getMember().getEmail());
 
-        TokenDTO dto = new TokenDTO(ret.getId(), ret.getUser().getId(), ret.getUser().getUserName(), ret.getExpiration());
+        TokenDTO dto = new TokenDTO(ret.getId(), ret.getMember().getId(), ret.getMember().getEmail(), ret.getExpiration());
         return dto;
     }
 
     @PostMapping("/register/")
     @ResponseStatus(HttpStatus.CREATED)
-    public void registerUser(@RequestBody UserDTO user) {
-        this.userService.register(user);
+    public void registerUser(@RequestBody MemberDTO user) {
+        this.authService.register(user);
     }
 
     @PutMapping("")
-    public User updateUser(@RequestBody User user) {
-        return this.userService.update(user);
+    public Member updateUser(@RequestBody Member member) {
+        return this.authService.update(member);
     }
 
     @DeleteMapping("/{id}")
-    public User deleteUser(@PathVariable int id) {
-        return this.userService.deleteById(id);
+    public Member deleteUser(@PathVariable int id) {
+        return this.authService.deleteById(id);
     }
 
     @ExceptionHandler(HttpClientErrorException.class)

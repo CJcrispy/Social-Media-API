@@ -14,8 +14,6 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.inject.Inject;
-
 @Configuration
 @EnableTransactionManagement
 public class HibernateConfig {
@@ -34,7 +32,7 @@ public class HibernateConfig {
         System.out.println("Configuring sessionfactory bean");
         LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
         factoryBean.setConfigLocation(new ClassPathResource("hibernate.cfg.xml"));
-        factoryBean.setAnnotatedClasses(User.class, Token.class);
+        factoryBean.setAnnotatedClasses(Member.class, MemberToken.class);
         factoryBean.setDataSource(getDataSource());
         return factoryBean;
     }

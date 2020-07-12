@@ -2,12 +2,11 @@ package core.DTO;
 
 import java.util.Objects;
 
-public class UserDTO {
+public class MemberDTO {
 
     private String fname;
     private String lname;
     private String email;
-    private String username;
     private String password;
 
     public String getFname() {
@@ -34,13 +33,6 @@ public class UserDTO {
         this.email = email;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
 
     public String getPassword() {
         return password;
@@ -54,17 +46,16 @@ public class UserDTO {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        UserDTO userDTO = (UserDTO) o;
-        return Objects.equals(fname, userDTO.fname) &&
-                Objects.equals(lname, userDTO.lname) &&
-                Objects.equals(email, userDTO.email) &&
-                Objects.equals(username, userDTO.username) &&
-                Objects.equals(password, userDTO.password);
+        MemberDTO memberDTO = (MemberDTO) o;
+        return Objects.equals(fname, memberDTO.fname) &&
+                Objects.equals(lname, memberDTO.lname) &&
+                Objects.equals(email, memberDTO.email) &&
+                Objects.equals(password, memberDTO.password);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(fname, lname, email, username, password);
+        return Objects.hash(fname, lname, email, password);
     }
 
     @Override
@@ -73,21 +64,19 @@ public class UserDTO {
                 "fname='" + fname + '\'' +
                 ", lname='" + lname + '\'' +
                 ", email='" + email + '\'' +
-                ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 '}';
     }
 
-    public UserDTO(String fname, String lname, String email, String username, String password) {
+    public MemberDTO(String fname, String lname, String email, String password) {
         super();
         this.fname = fname;
         this.lname = lname;
         this.email = email;
-        this.username = username;
         this.password = password;
     }
 
-    public UserDTO() {
+    public MemberDTO() {
         super();
     }
 }

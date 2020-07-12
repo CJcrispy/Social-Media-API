@@ -2,24 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9d3ac59-355a-4a29-9453-a0ced116c11c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Soko-core.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/controllers/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/DTO/BusinessDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/controllers/AuthenticationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/entities/Business.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/entities/BusinessToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/entities/Roles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/repositories/BusinessRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/DTO/LoginDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/DTO/LoginDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/DTO/TokenDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/DTO/TokenDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/DTO/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/DTO/MemberDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/config/HibernateConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/config/HibernateConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/repositories/SymptomRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/entities/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/entities/MemberToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/entities/Member.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/repositories/TokenRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/repositories/TokenRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/services/ApiService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/repositories/MemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/services/AuthenticationService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,6 +44,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1dKgylAkty2ZFvcebNlwGPyWcQv" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -100,6 +115,10 @@
       <screen x="0" y="23" width="1440" height="816" />
     </state>
     <state x="184" y="100" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.816@0.23.1440.816" timestamp="1593480384507" />
+    <state x="2568" y="140" key="#com.intellij.ide.util.MemberChooser" timestamp="1594530976038">
+      <screen x="1920" y="5" width="1920" height="1040" />
+    </state>
+    <state x="2568" y="140" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1594530976038" />
     <state x="457" y="229" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1593480357667">
       <screen x="0" y="23" width="1440" height="816" />
     </state>
@@ -108,5 +127,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="626" y="445" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040/1920.5.1920.1040@0.0.1920.1040" timestamp="1592182394974" />
+    <state x="2425" y="5" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1594531408915">
+      <screen x="1920" y="5" width="1920" height="1040" />
+    </state>
+    <state x="2425" y="5" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1594531408915" />
+    <state x="2012" y="97" width="1736" height="856" key="dock-window-1" timestamp="1594519560472">
+      <screen x="1920" y="5" width="1920" height="1040" />
+    </state>
+    <state x="2012" y="97" width="1736" height="856" key="dock-window-1/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1594519560472" />
   </component>
 </project>

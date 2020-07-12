@@ -1,11 +1,13 @@
 package core.entities;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "USERS")
+public class Member {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,13 +15,13 @@ public class User {
     private int user_id;
 
     @Column(nullable = false)
-    private String firstName;
+    private String first_name;
 
     @Column(nullable = false)
-    private String lastName;
+    private String last_name;
 
     @Column(nullable = false, unique = true)
-    private String userName;
+    private String user_email;
 
     @Column(nullable = false, length = 64)
     private String hashedPass;
@@ -27,15 +29,20 @@ public class User {
     @Column(nullable = false, length = 18)
     private String salt;
 
-    @Column(nullable = false, unique = true)
-    private String email;
-
     @OneToMany(
             mappedBy = "user",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<Token> tokens;
+    private List<MemberToken> tokens;
+
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "users_roles",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private Set<Roles> roles = new HashSet<>();
 
     public int getId() {
         return user_id;
@@ -46,28 +53,21 @@ public class User {
     }
 
     public String getFirstName() {
-        return firstName;
+        return first_name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstName(String first_name) {
+        this.first_name = first_name;
     }
 
     public String getLastName() {
-        return lastName;
+        return last_name;
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        this.last_name = last_name;
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
 
     public String getHashedPass() {
         return hashedPass;
@@ -86,23 +86,24 @@ public class User {
     }
 
     public String getEmail() {
-        return email;
+        return user_email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String user_email) {
+        this.user_email = user_email;
     }
+
+
 
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((email == null) ? 0 : email.hashCode());
-        result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
+        result = prime * result + ((user_email== null) ? 0 : user_email.hashCode());
+        result = prime * result + ((first_name == null) ? 0 : first_name.hashCode());
         result = prime * result + ((hashedPass == null) ? 0 : hashedPass.hashCode());
-        result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
+        result = prime * result + ((last_name == null) ? 0 : last_name.hashCode());
         result = prime * result + ((salt == null) ? 0 : salt.hashCode());
-        result = prime * result + ((userName == null) ? 0 : userName.hashCode());
         result = prime * result + user_id;
         return result;
     }
@@ -115,54 +116,48 @@ public class User {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        User other = (User) obj;
-        if (email == null) {
-            if (other.email != null)
+        Member other = (Member) obj;
+        if (user_email == null) {
+            if (other.user_email != null)
                 return false;
-        } else if (!email.equals(other.email))
+        } else if (!user_email.equals(other.user_email))
             return false;
-        if (firstName == null) {
-            if (other.firstName != null)
+        if (first_name == null) {
+            if (other.first_name != null)
                 return false;
-        } else if (!firstName.equals(other.firstName))
+        } else if (!first_name.equals(other.first_name))
             return false;
         if (hashedPass == null) {
             if (other.hashedPass != null)
                 return false;
         } else if (!hashedPass.equals(other.hashedPass))
             return false;
-        if (lastName == null) {
-            if (other.lastName != null)
+        if (last_name == null) {
+            if (other.last_name != null)
                 return false;
-        } else if (!lastName.equals(other.lastName))
+        } else if (!last_name.equals(other.last_name))
             return false;
         if (salt == null) {
             if (other.salt != null)
                 return false;
         } else if (!salt.equals(other.salt))
             return false;
-        if (userName == null) {
-            if (other.userName != null)
-                return false;
-        } else if (!userName.equals(other.userName))
-            return false;
         if (user_id != other.user_id)
             return false;
         return true;
     }
 
-    public User(String firstName, String lastName, String userName, String hashedpass, String salt,
-                String email) {
+    public Member(String firstName, String lastName, String hashedpass, String salt,
+                  String email) {
         super();
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.userName = userName;
+        this.first_name = firstName;
+        this.last_name = lastName;
         this.hashedPass = hashedpass;
         this.salt = salt;
-        this.email = email;
+        this.user_email = user_email;
     }
 
-    public User() {
+    public Member() {
         super();
         // TODO Auto-generated constructor stub
     }

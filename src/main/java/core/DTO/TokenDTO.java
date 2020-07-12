@@ -7,7 +7,7 @@ public class TokenDTO {
 
     private int tokenID;
     private int userID;
-    private String username;
+    private String email;
     private Timestamp expiry;
 
     public int getTokenID() {
@@ -27,11 +27,11 @@ public class TokenDTO {
     }
 
     public String getUsername() {
-        return username;
+        return email;
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        this.email = email;
     }
 
     public Timestamp getExpiry() {
@@ -49,30 +49,30 @@ public class TokenDTO {
         TokenDTO tokenDTO = (TokenDTO) o;
         return tokenID == tokenDTO.tokenID &&
                 userID == tokenDTO.userID &&
-                Objects.equals(username, tokenDTO.username) &&
+                Objects.equals(email, tokenDTO.email) &&
                 Objects.equals(expiry, tokenDTO.expiry);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tokenID, userID, username, expiry);
+        return Objects.hash(tokenID, userID, email, expiry);
     }
 
     @Override
     public String toString() {
         return "TokenDTO{" +
-                "tokenID=" + tokenID +
-                ", userID=" + userID +
-                ", username='" + username + '\'' +
-                ", expiry=" + expiry +
+                "tokenID: " + tokenID +
+                ", userID: " + userID +
+                ", username: '" + email + '\'' +
+                ", expiry: " + expiry +
                 '}';
     }
 
-    public TokenDTO(int tokenID, int userID, String username, Timestamp expiry) {
+    public TokenDTO(int tokenID, int userID, String email, Timestamp expiry) {
         super();
         this.tokenID = tokenID;
         this.userID = userID;
-        this.username = username;
+        this.email = email;
         this.expiry = expiry;
     }
     public TokenDTO() {
