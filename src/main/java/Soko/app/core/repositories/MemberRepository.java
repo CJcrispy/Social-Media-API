@@ -1,0 +1,63 @@
+package Soko.app.core.repositories;
+
+import Soko.app.core.entities.Member;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.HttpClientErrorException;
+
+import javax.xml.ws.http.HTTPException;
+
+@Repository
+public class MemberRepository {
+
+    @Autowired
+    SessionFactory sessionFactory;
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    public Member getById(int id) {
+        Session session = sessionFactory.getCurrentSession();
+        return session.get(Member.class, id);
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    public Member create(Member member) {
+        Session session = sessionFactory.getCurrentSession();
+        session.save(member);
+        return member;
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    public Member update(Member member) {
+        Session session = sessionFactory.getCurrentSession();
+        session.merge(member);
+        return member;
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    public Member deleteById(int id) {
+        Session session = sessionFactory.getCurrentSession();
+        Member member = session.get(Member.class, id);
+        if(member == null) throw new HttpClientErrorException(HttpStatus.NOT_FOUND);
+        session.delete(member);
+        return member;
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    public Member getByEmail(String email) {
+        Session session = sessionFactory.getCurrentSession();
+        Member member;
+        try {
+            member = (session.createQuery("Select e from Member e where e.user_email = :email", Member.class).setParameter("email", email).list()).get(0);
+            System.out.println("member = " + member);
+        } catch (IndexOutOfBoundsException e) {
+            throw new HTTPException(401);
+        }
+        return member;
+    }
+
+}

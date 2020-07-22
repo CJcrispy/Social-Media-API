@@ -8,10 +8,12 @@
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
 
-        <mapping class="core.entities.Business"/>
-        <mapping class="core.entities.BusinessToken"/>
+        <mapping class="Soko.app.core.entities.Business"/>
+        <mapping class="Soko.app.core.entities.BusinessToken"/>
 
-        <mapping class="core.entities.Member"/>
-        <mapping class="core.entities.MemberToken"/>
+        <mapping class="Soko.app.core.entities.Member"/>
+        <mapping class="Soko.app.core.entities.MemberToken"/>
+
+        <mapping class="Soko.app.core.entities.Roles"/>
     </session-factory>
 </hibernate-configuration>
