@@ -1,17 +1,15 @@
 package core.entities;
 
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Entity
-@Table(name = "USERS")
+@Table(name = "MEMBERS")
 public class Member {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
+    @Column(name = "member_id")
     private int user_id;
 
     @Column(nullable = false)
@@ -21,28 +19,22 @@ public class Member {
     private String last_name;
 
     @Column(nullable = false, unique = true)
-    private String user_email;
+    private String email;
 
     @Column(nullable = false, length = 64)
     private String hashedPass;
 
-    @Column(nullable = false, length = 18)
+    @Column(nullable = false, length = 64)
     private String salt;
 
     @OneToMany(
-            mappedBy = "user",
+            mappedBy = "member",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
     private List<MemberToken> tokens;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "users_roles",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id")
-    )
-    private Set<Roles> roles = new HashSet<>();
+
 
     public int getId() {
         return user_id;
@@ -86,20 +78,18 @@ public class Member {
     }
 
     public String getEmail() {
-        return user_email;
+        return email;
     }
 
     public void setEmail(String user_email) {
-        this.user_email = user_email;
+        this.email = user_email;
     }
-
-
 
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((user_email== null) ? 0 : user_email.hashCode());
+        result = prime * result + ((email== null) ? 0 : email.hashCode());
         result = prime * result + ((first_name == null) ? 0 : first_name.hashCode());
         result = prime * result + ((hashedPass == null) ? 0 : hashedPass.hashCode());
         result = prime * result + ((last_name == null) ? 0 : last_name.hashCode());
@@ -117,10 +107,10 @@ public class Member {
         if (getClass() != obj.getClass())
             return false;
         Member other = (Member) obj;
-        if (user_email == null) {
-            if (other.user_email != null)
+        if (email == null) {
+            if (other.email != null)
                 return false;
-        } else if (!user_email.equals(other.user_email))
+        } else if (!email.equals(other.email))
             return false;
         if (first_name == null) {
             if (other.first_name != null)
@@ -154,7 +144,7 @@ public class Member {
         this.last_name = lastName;
         this.hashedPass = hashedpass;
         this.salt = salt;
-        this.user_email = user_email;
+        this.email = email;
     }
 
     public Member() {

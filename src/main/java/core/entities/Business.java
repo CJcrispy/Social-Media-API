@@ -1,9 +1,8 @@
 package core.entities;
 
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
+import java.util.Objects;
 
 @Entity
 @Table(name = "BUSINESS")
@@ -15,13 +14,13 @@ public class Business {
     private int business_id;
 
     @Column(nullable = false)
+    private String first_name;
+
+    @Column(nullable = false)
+    private String last_name;
+
+    @Column(nullable = false)
     private String business_name;
-
-    @Column(nullable = false)
-    private String business_rep_first_name;
-
-    @Column(nullable = false)
-    private String business_rep_last_name;
 
     @Column(nullable = false, unique = true)
     private String business_email;
@@ -29,7 +28,7 @@ public class Business {
     @Column(nullable = false, length = 64)
     private String hashedPass;
 
-    @Column(nullable = false, length = 18)
+    @Column(nullable = false, length = 64)
     private String salt;
 
     @OneToMany(
@@ -37,15 +36,7 @@ public class Business {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<MemberToken> tokens;
-
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "business_roles",
-            joinColumns = @JoinColumn(name = "business_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id")
-    )
-    private Set<Roles> roles = new HashSet<>();
+    private List<BusinessToken> tokens;
 
     public int getBusiness_id() {
         return business_id;
@@ -63,20 +54,20 @@ public class Business {
         this.business_name = business_name;
     }
 
-    public String getBusiness_rep_first_name() {
-        return business_rep_first_name;
+    public String getFirstName() {
+        return first_name;
     }
 
-    public void setBusiness_rep_first_name(String business_rep_first_name) {
-        this.business_rep_first_name = business_rep_first_name;
+    public void setFirstName(String first_name) {
+        this.first_name = first_name;
     }
 
-    public String getBusiness_rep_last_name() {
-        return business_rep_last_name;
+    public String getLastName() {
+        return last_name;
     }
 
-    public void setBusiness_rep_last_name(String business_rep_last_name) {
-        this.business_rep_last_name = business_rep_last_name;
+    public void setLastName(String lastName) {
+        this.last_name = last_name;
     }
 
     public String getBusiness_email() {
@@ -102,4 +93,77 @@ public class Business {
     public void setSalt(String salt) {
         this.salt = salt;
     }
+
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((business_email== null) ? 0 : business_email.hashCode());
+        result = prime * result + ((first_name == null) ? 0 : first_name.hashCode());
+        result = prime * result + ((hashedPass == null) ? 0 : hashedPass.hashCode());
+        result = prime * result + ((last_name == null) ? 0 : last_name.hashCode());
+        result = prime * result + ((salt == null) ? 0 : salt.hashCode());
+        result = prime * result + business_id;
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Business other = (Business) obj;
+        if (business_email == null) {
+            if (other.business_email != null)
+                return false;
+        } else if (!business_email.equals(other.business_email))
+            return false;
+        if (first_name == null) {
+            if (other.first_name != null)
+                return false;
+        } else if (!first_name.equals(other.first_name))
+            return false;
+        if (hashedPass == null) {
+            if (other.hashedPass != null)
+                return false;
+        } else if (!hashedPass.equals(other.hashedPass))
+            return false;
+        if (last_name == null) {
+            if (other.last_name != null)
+                return false;
+        } else if (!last_name.equals(other.last_name))
+            return false;
+        if (salt == null) {
+            if (other.salt != null)
+                return false;
+        } else if (!salt.equals(other.salt))
+            return false;
+        if (business_id != other.business_id)
+            return false;
+        return true;
+    }
+
+
+
+
+    public Business(String firstName, String lastName, String hashedpass, String salt,
+                  String business_email, String business_name) {
+        super();
+        this.first_name = firstName;
+        this.last_name = lastName;
+        this.hashedPass = hashedpass;
+        this.salt = salt;
+        this.business_email = business_email;
+        this.business_name = business_name;
+    }
+
+    public Business() {
+        super();
+    }
 }
+
+

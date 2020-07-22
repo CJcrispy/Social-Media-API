@@ -1,5 +1,6 @@
 package core.controllers;
 
+import core.DTO.BusinessDTO;
 import core.DTO.LoginDTO;
 import core.DTO.MemberDTO;
 import core.DTO.TokenDTO;
@@ -70,10 +71,16 @@ public class AuthenticationController {
         return null;
     }
 
-    @PostMapping("/register/")
+    @PostMapping("/register-member/")
     @ResponseStatus(HttpStatus.CREATED)
-    public void registerUser(@RequestBody MemberDTO user) {
-        this.authService.register(user);
+    public void registerMember(@RequestBody MemberDTO user) {
+        this.authService.registerMember(user);
+    }
+
+    @PostMapping("/register-business/")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void registerBusiness(@RequestBody BusinessDTO user) {
+        this.authService.registerBusiness(user);
     }
 
     @PutMapping("")

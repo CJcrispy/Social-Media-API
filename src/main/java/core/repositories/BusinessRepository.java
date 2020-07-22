@@ -1,7 +1,6 @@
 package core.repositories;
 
 import core.entities.Business;
-import core.entities.Member;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,32 +19,32 @@ public class BusinessRepository {
     SessionFactory sessionFactory;
 
     @Transactional(propagation = Propagation.REQUIRED)
-    public Member getById(int id) {
+    public Business getById(int id) {
         Session session = sessionFactory.getCurrentSession();
-        return session.get(Member.class, id);
+        return session.get(Business.class, id);
     }
 
     @Transactional(propagation = Propagation.REQUIRED)
-    public Member create(Member member) {
+    public Business create(Business business) {
         Session session = sessionFactory.getCurrentSession();
-        session.save(member);
-        return member;
+        session.save(business);
+        return business;
     }
 
     @Transactional(propagation = Propagation.REQUIRED)
-    public Member update(Member member) {
+    public Business update(Business business) {
         Session session = sessionFactory.getCurrentSession();
-        session.merge(member);
-        return member;
+        session.merge(business);
+        return business;
     }
 
     @Transactional(propagation = Propagation.REQUIRED)
-    public Member deleteById(int id) {
+    public Business deleteById(int id) {
         Session session = sessionFactory.getCurrentSession();
-        Member member = session.get(Member.class, id);
-        if(member == null) throw new HttpClientErrorException(HttpStatus.NOT_FOUND);
-        session.delete(member);
-        return member;
+        Business business = session.get(Business.class, id);
+        if(business == null) throw new HttpClientErrorException(HttpStatus.NOT_FOUND);
+        session.delete(business);
+        return business;
     }
 
     @Transactional(propagation = Propagation.REQUIRED)

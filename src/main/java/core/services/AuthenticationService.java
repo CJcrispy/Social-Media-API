@@ -22,14 +22,16 @@ public class AuthenticationService {
     @Autowired
     TokenRepository tokenRepository;
 
-    public void register(MemberDTO user) {
+    public void registerMember(MemberDTO user) {
         String salt = getSaltstring();
         Member toAdd = new Member(user.getFname(), user.getLname(), user.getEmail(), hash(user.getPassword(),salt), salt);
         this.memberRepository.create(toAdd);
     }
 
     public void registerBusiness(BusinessDTO businessUser) {
-
+        String salt = getSaltstring();
+        Business toAdd = new Business(businessUser.getFirstName(), businessUser.getLastName(), businessUser.getBusiness_name(), businessUser.getBusiness_email(), hash(businessUser.getPassword(),salt), salt);
+        this.businessRepository.create(toAdd);
     }
 
     private String getSaltstring() {

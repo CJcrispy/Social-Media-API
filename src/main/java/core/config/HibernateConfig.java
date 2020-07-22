@@ -9,6 +9,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
@@ -33,9 +34,11 @@ public class HibernateConfig {
         LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
         factoryBean.setConfigLocation(new ClassPathResource("hibernate.cfg.xml"));
         factoryBean.setAnnotatedClasses(Member.class, MemberToken.class);
+        factoryBean.setAnnotatedClasses(Business.class, BusinessToken.class);
         factoryBean.setDataSource(getDataSource());
         return factoryBean;
     }
+
 
     @Bean
     @Inject

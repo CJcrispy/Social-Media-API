@@ -53,6 +53,7 @@ public class MemberRepository {
         Member member;
         try {
             member = (session.createQuery("Select e from Member e where e.user_email = :email", Member.class).setParameter("email", email).list()).get(0);
+            System.out.println("member = " + member);
         } catch (IndexOutOfBoundsException e) {
             throw new HTTPException(401);
         }
