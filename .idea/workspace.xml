@@ -2,43 +2,59 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9d3ac59-355a-4a29-9453-a0ced116c11c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/controllers/TestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/models/ERole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/models/Roles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/models/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/payload/request/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/payload/request/RegisterRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/payload/response/JwtResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/payload/response/MessageResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/repositories/RoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/repositories/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/security/AuthEntryPointJwt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/security/AuthTokenFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/security/JwtUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/services/UserDetailsImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/services/UserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/services/UserDetailsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/DTO/BusinessDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/DTO/BusinessDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/DTO/LoginDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/DTO/LoginDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/DTO/MemberDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/DTO/MemberDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/DTO/TokenDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/DTO/TokenDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/config/HibernateConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/config/HibernateConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/controllers/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/controllers/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/entities/Business.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/entities/Business.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/entities/BusinessToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/entities/BusinessToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/entities/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/entities/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/entities/MemberToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/entities/MemberToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/entities/Roles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/entities/Roles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/repositories/BusinessRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/repositories/BusinessRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/repositories/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/repositories/MemberRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/repositories/TokenRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/repositories/TokenRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/services/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/services/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/DTO/BusinessDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/DTO/LoginDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/DTO/MemberDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/DTO/TokenDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/config/HibernateConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/config/HibernateConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/controllers/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/controllers/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/entities/Business.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/entities/BusinessToken.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/entities/Member.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/entities/MemberToken.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/entities/Roles.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/repositories/BusinessRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/repositories/MemberRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/repositories/TokenRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/services/AuthenticationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/core/Application.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/core/DTO/BusinessDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/core/DTO/LoginDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/core/DTO/MemberDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/core/DTO/TokenDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/core/config/HibernateConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/core/config/WebSecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/core/controllers/AuthenticationController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/core/entities/Business.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/core/entities/BusinessToken.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/core/entities/Member.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/core/entities/MemberToken.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/core/entities/Roles.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/core/repositories/BusinessRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/core/repositories/MemberRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/core/repositories/TokenRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/core/services/AuthenticationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/DTO/BusinessDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/DTO/LoginDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/DTO/MemberDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/DTO/TokenDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/config/HibernateConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Soko/app/core/config/HibernateConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Soko/app/core/config/WebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/controllers/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Soko/app/core/controllers/AuthenticationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/entities/Business.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/entities/BusinessToken.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/entities/Member.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/entities/MemberToken.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/entities/Roles.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/repositories/BusinessRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/repositories/MemberRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/repositories/TokenRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/services/AuthenticationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,6 +65,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -84,6 +101,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="Soko.app.core.services" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="core.controllers" />
       <recent name="core" />
@@ -137,10 +157,14 @@
     </state>
     <state x="2165" y="103" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595433341237" />
     <state x="184" y="100" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.816@0.23.1440.816" timestamp="1593480384507" />
-    <state x="2885" y="132" key="#com.intellij.ide.util.MemberChooser" timestamp="1594571503694">
+    <state x="2650" y="327" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595563972670">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state x="2885" y="132" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1594571503694" />
+    <state x="2650" y="327" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595563972670" />
+    <state x="2885" y="132" key="#com.intellij.ide.util.MemberChooser" timestamp="1595647974451">
+      <screen x="1920" y="5" width="1920" height="1040" />
+    </state>
+    <state x="2885" y="132" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595647974451" />
     <state x="2529" y="268" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1595433339347">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
@@ -154,38 +178,38 @@
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
     <state x="2425" y="5" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1594531408915" />
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1595433722920">
+    <state width="1877" height="333" key="GridCell.Tab.0.bottom" timestamp="1595697792161">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595433722920" />
-    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1595433722919">
+    <state width="1877" height="333" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595697792161" />
+    <state width="1877" height="333" key="GridCell.Tab.0.center" timestamp="1595697792161">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595433722919" />
-    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1595433722919">
+    <state width="1877" height="333" key="GridCell.Tab.0.center/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595697792161" />
+    <state width="1877" height="333" key="GridCell.Tab.0.left" timestamp="1595697792161">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595433722919" />
-    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1595433722920">
+    <state width="1877" height="333" key="GridCell.Tab.0.left/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595697792161" />
+    <state width="1877" height="333" key="GridCell.Tab.0.right" timestamp="1595697792161">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595433722920" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1595433722920">
+    <state width="1877" height="333" key="GridCell.Tab.0.right/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595697792161" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1595440226950">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595433722920" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1595433722920">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595440226950" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1595440226950">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595433722920" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1595433722920">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595440226950" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1595440226950">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595433722920" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1595433722920">
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595440226950" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1595440226950">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595433722920" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595440226950" />
     <state x="2012" y="97" width="1736" height="856" key="dock-window-1" timestamp="1594519560472">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>

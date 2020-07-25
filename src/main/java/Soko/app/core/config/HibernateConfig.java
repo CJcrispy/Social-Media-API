@@ -1,12 +1,9 @@
 package Soko.app.core.config;
 
-import Soko.app.core.entities.Business;
-import Soko.app.core.entities.BusinessToken;
-import Soko.app.core.entities.Member;
-import Soko.app.core.entities.MemberToken;
-
 import javax.inject.Inject;
 import javax.sql.DataSource;
+
+import Soko.app.core.models.Roles;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -30,19 +27,18 @@ public class HibernateConfig {
     @Value("${spring.datasource.password}")
     public String dbPassword;
 
-    @Bean
+    @Bean(name="entityManagerFactory")
     public LocalSessionFactoryBean getSessionFactory() {
         System.out.println("Configuring sessionfactory bean");
         LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
         factoryBean.setConfigLocation(new ClassPathResource("hibernate.cfg.xml"));
-        factoryBean.setAnnotatedClasses(Member.class, MemberToken.class);
-        factoryBean.setAnnotatedClasses(Business.class, BusinessToken.class);
+
         factoryBean.setDataSource(getDataSource());
         return factoryBean;
     }
 
 
-    @Bean
+    @Bean(name="transactionManager")
     @Inject
     public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory) {
         System.out.println("Configuring transaction manager");
