@@ -1,11 +1,11 @@
 spring:
   application:
-    name: soko-app
+    name: Taku-app
 
   datasource:
-    username: postgres
-    password:
-    url: jdbc:postgresql://localhost:5432/soko_app
+    username: TacoTaku
+    password: blackLivesMatter23!
+    url: jdbc:postgresql://taku-app.cysbl2jmgwqw.us-east-1.rds.amazonaws.com:5432/taku-app
 
     jpa:
       hibernate:
@@ -24,9 +24,17 @@ spring:
 server:
    port: 8081
 
+
+
 # App Properties
 bezkoder:
   app:
     jwtSecret: bezKoderSecretKey
     jwtExpirationMs: 86400000
 
+# AWS Properties
+    amazonProperties:
+      endpointUrl: https://s3.us-east-1.amazonaws.com
+      accessKey: AKIAJM7XATHXFSWUNOHQ
+      secretKey: 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
+      bucketName: taku-images
