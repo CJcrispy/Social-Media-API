@@ -2,106 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9d3ac59-355a-4a29-9453-a0ced116c11c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Taku-core.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/config/HibernateConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/config/WebSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/controllers/AuthenticationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/controllers/ImageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/controllers/TestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/ERole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/Images.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/Roles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/payload/request/LoginRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/payload/request/RegisterRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/payload/response/JwtResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/payload/response/MessageResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/repositories/ImageRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/repositories/RoleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/repositories/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/security/AuthEntryPointJwt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/security/AuthTokenFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/security/JwtUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/images/AmazonClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/images/ImageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/userDetails/UserDetailsImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/userDetails/UserDetailsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/userDetails/UserDetailsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/Application.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/config/HibernateConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/config/WebSecurityConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/controllers/AuthenticationController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/controllers/ImageController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/controllers/TestController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/models/ERole.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/models/Images.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/models/Roles.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/models/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/payload/request/LoginRequest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/payload/request/RegisterRequest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/payload/response/JwtResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/payload/response/MessageResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/repositories/ImageRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/repositories/RoleRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/repositories/UserRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/security/AuthEntryPointJwt.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/security/AuthTokenFilter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/security/JwtUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/services/images/AmazonClient.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/services/images/ImageService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/services/userDetails/UserDetailsImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/services/userDetails/UserDetailsService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/services/userDetails/UserDetailsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Soko-core.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/config/HibernateConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/config/WebSecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/controllers/AuthenticationController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/controllers/TestController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/models/ERole.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/models/Roles.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/models/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/payload/request/LoginRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/payload/request/RegisterRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/payload/response/JwtResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/payload/response/MessageResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/repositories/RoleRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/repositories/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/security/AuthEntryPointJwt.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/security/AuthTokenFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/security/JwtUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/services/UserDetailsImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/services/UserDetailsService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/services/UserDetailsServiceImpl.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Soko-core.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/Application.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/config/HibernateConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/config/WebSecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/controllers/AuthenticationController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/controllers/TestController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/models/ERole.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/models/Roles.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/models/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/payload/request/LoginRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/payload/request/RegisterRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/payload/response/JwtResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/payload/response/MessageResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/repositories/RoleRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/repositories/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/security/AuthEntryPointJwt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/security/AuthTokenFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/security/JwtUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/services/UserDetailsImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/services/UserDetailsService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/services/UserDetailsServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,30 +122,31 @@
     </state>
     <state x="2529" y="268" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596475490158" />
     <state x="457" y="229" key="#com.intellij.ide.util.TreeClassChooserDialog/0.23.1440.816@0.23.1440.816" timestamp="1593480357667" />
-    <state x="626" y="445" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1592182394974">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2546" y="450" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1596780398545">
+      <screen x="1920" y="5" width="1920" height="1040" />
     </state>
     <state x="626" y="445" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040/1920.5.1920.1040@0.0.1920.1040" timestamp="1592182394974" />
+    <state x="2546" y="450" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596780398545" />
     <state x="2425" y="5" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1594531408915">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
     <state x="2425" y="5" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1594531408915" />
-    <state width="1877" height="365" key="GridCell.Tab.0.bottom" timestamp="1596512694065">
+    <state width="1877" height="365" key="GridCell.Tab.0.bottom" timestamp="1596780407935">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="365" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596512694065" />
-    <state width="1877" height="365" key="GridCell.Tab.0.center" timestamp="1596512694064">
+    <state width="1877" height="365" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596780407935" />
+    <state width="1877" height="365" key="GridCell.Tab.0.center" timestamp="1596780407935">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="365" key="GridCell.Tab.0.center/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596512694064" />
-    <state width="1877" height="365" key="GridCell.Tab.0.left" timestamp="1596512694064">
+    <state width="1877" height="365" key="GridCell.Tab.0.center/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596780407935" />
+    <state width="1877" height="365" key="GridCell.Tab.0.left" timestamp="1596780407935">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="365" key="GridCell.Tab.0.left/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596512694064" />
-    <state width="1877" height="365" key="GridCell.Tab.0.right" timestamp="1596512694065">
+    <state width="1877" height="365" key="GridCell.Tab.0.left/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596780407935" />
+    <state width="1877" height="365" key="GridCell.Tab.0.right" timestamp="1596780407935">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="365" key="GridCell.Tab.0.right/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596512694065" />
+    <state width="1877" height="365" key="GridCell.Tab.0.right/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596780407935" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1595440226950">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
