@@ -27,7 +27,7 @@ server:
 
 
 # App Properties
-bezkoder:
+taku:
   app:
     jwtSecret: bezKoderSecretKey
     jwtExpirationMs: 86400000

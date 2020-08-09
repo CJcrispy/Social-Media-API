@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9d3ac59-355a-4a29-9453-a0ced116c11c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Lightning-mcqueen.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/security/JwtUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/security/JwtUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,22 +133,26 @@
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
     <state x="2425" y="5" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1594531408915" />
-    <state width="1877" height="365" key="GridCell.Tab.0.bottom" timestamp="1596780407935">
+    <state width="1877" height="365" key="GridCell.Tab.0.bottom" timestamp="1596835068759">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="365" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596780407935" />
-    <state width="1877" height="365" key="GridCell.Tab.0.center" timestamp="1596780407935">
+    <state width="1877" height="365" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596822260921" />
+    <state width="1877" height="365" key="GridCell.Tab.0.bottom/0.0.1920.999/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596835068759" />
+    <state width="1877" height="365" key="GridCell.Tab.0.center" timestamp="1596835068758">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="365" key="GridCell.Tab.0.center/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596780407935" />
-    <state width="1877" height="365" key="GridCell.Tab.0.left" timestamp="1596780407935">
+    <state width="1877" height="365" key="GridCell.Tab.0.center/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596822260921" />
+    <state width="1877" height="365" key="GridCell.Tab.0.center/0.0.1920.999/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596835068758" />
+    <state width="1877" height="365" key="GridCell.Tab.0.left" timestamp="1596835068758">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="365" key="GridCell.Tab.0.left/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596780407935" />
-    <state width="1877" height="365" key="GridCell.Tab.0.right" timestamp="1596780407935">
+    <state width="1877" height="365" key="GridCell.Tab.0.left/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596822260920" />
+    <state width="1877" height="365" key="GridCell.Tab.0.left/0.0.1920.999/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596835068758" />
+    <state width="1877" height="365" key="GridCell.Tab.0.right" timestamp="1596835068759">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="365" key="GridCell.Tab.0.right/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596780407935" />
+    <state width="1877" height="365" key="GridCell.Tab.0.right/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596822260921" />
+    <state width="1877" height="365" key="GridCell.Tab.0.right/0.0.1920.999/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596835068759" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1595440226950">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
@@ -171,5 +177,8 @@
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
     <state x="2262" y="226" key="new project wizard/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595275954091" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Taku_core$Taku_start.ic" NAME="Taku-start Coverage Results" MODIFIED="1596835062499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
