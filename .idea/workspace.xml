@@ -2,10 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9d3ac59-355a-4a29-9453-a0ced116c11c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Lightning-mcqueen.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/email_verification/MailProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/email_verification/VerificationForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/email_verification/VerificationToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/repositories/VerificationTokenRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/userDetails/EmailSenderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/userDetails/VerificationTokenService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/email-verification.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/verification-form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/security/JwtUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/security/JwtUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/config/HibernateConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/config/HibernateConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/controllers/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/controllers/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/ERole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/users/ERole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/Images.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/images/Images.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/Roles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/users/Roles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/users/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/repositories/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/repositories/RoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/userDetails/UserDetailsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/userDetails/UserDetailsImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/userDetails/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/userDetails/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +34,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="Interface" />
+        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
@@ -41,6 +61,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
@@ -54,6 +75,9 @@
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="Soko.app.core.services" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Chris\Documents\Github\Taku-core\src\main\resources\config" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="core.controllers" />
@@ -111,14 +135,14 @@
     </state>
     <state x="2165" y="103" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596475493192" />
     <state x="184" y="100" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.816@0.23.1440.816" timestamp="1593480384507" />
-    <state x="2650" y="327" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595563972670">
+    <state x="2650" y="327" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1597171483931">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state x="2650" y="327" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595563972670" />
-    <state x="2885" y="132" key="#com.intellij.ide.util.MemberChooser" timestamp="1595647974451">
+    <state x="2650" y="327" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1597171483931" />
+    <state x="2885" y="132" key="#com.intellij.ide.util.MemberChooser" timestamp="1597169660341">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state x="2885" y="132" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595647974451" />
+    <state x="2885" y="132" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1597169660341" />
     <state x="2529" y="268" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1596475490158">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
@@ -129,29 +153,33 @@
     </state>
     <state x="626" y="445" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040/1920.5.1920.1040@0.0.1920.1040" timestamp="1592182394974" />
     <state x="2546" y="450" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596780398545" />
-    <state x="2425" y="5" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1594531408915">
+    <state x="2676" y="384" width="408" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1597171649015">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state x="2425" y="5" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1594531408915" />
-    <state width="1877" height="365" key="GridCell.Tab.0.bottom" timestamp="1596835068759">
+    <state x="2676" y="384" width="408" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1597171649015" />
+    <state x="2425" y="5" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1597123694995">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="365" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596822260921" />
+    <state x="2425" y="5" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1597123694995" />
+    <state width="1877" height="365" key="GridCell.Tab.0.bottom" timestamp="1597116799076">
+      <screen x="1920" y="5" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="365" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1597116799076" />
     <state width="1877" height="365" key="GridCell.Tab.0.bottom/0.0.1920.999/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596835068759" />
-    <state width="1877" height="365" key="GridCell.Tab.0.center" timestamp="1596835068758">
+    <state width="1877" height="365" key="GridCell.Tab.0.center" timestamp="1597116799076">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="365" key="GridCell.Tab.0.center/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596822260921" />
+    <state width="1877" height="365" key="GridCell.Tab.0.center/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1597116799076" />
     <state width="1877" height="365" key="GridCell.Tab.0.center/0.0.1920.999/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596835068758" />
-    <state width="1877" height="365" key="GridCell.Tab.0.left" timestamp="1596835068758">
+    <state width="1877" height="365" key="GridCell.Tab.0.left" timestamp="1597116799076">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="365" key="GridCell.Tab.0.left/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596822260920" />
+    <state width="1877" height="365" key="GridCell.Tab.0.left/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1597116799076" />
     <state width="1877" height="365" key="GridCell.Tab.0.left/0.0.1920.999/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596835068758" />
-    <state width="1877" height="365" key="GridCell.Tab.0.right" timestamp="1596835068759">
+    <state width="1877" height="365" key="GridCell.Tab.0.right" timestamp="1597116799076">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="365" key="GridCell.Tab.0.right/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596822260921" />
+    <state width="1877" height="365" key="GridCell.Tab.0.right/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1597116799076" />
     <state width="1877" height="365" key="GridCell.Tab.0.right/0.0.1920.999/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596835068759" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1595440226950">
       <screen x="1920" y="5" width="1920" height="1040" />
@@ -177,6 +205,14 @@
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
     <state x="2262" y="226" key="new project wizard/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595275954091" />
+    <state x="2622" y="154" key="refactoring.ChangeSignatureDialog" timestamp="1597123029497">
+      <screen x="1920" y="5" width="1920" height="1040" />
+    </state>
+    <state x="2622" y="154" key="refactoring.ChangeSignatureDialog/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1597123029497" />
+    <state x="2543" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1597119184863">
+      <screen x="1920" y="5" width="1920" height="1040" />
+    </state>
+    <state x="2543" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1597119184863" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Taku_core$Taku_start.ic" NAME="Taku-start Coverage Results" MODIFIED="1596835062499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

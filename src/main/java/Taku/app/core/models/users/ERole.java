@@ -1,4 +1,4 @@
-package Taku.app.core.models;
+package Taku.app.core.models.users;
 
 public enum ERole {
     Role_member,

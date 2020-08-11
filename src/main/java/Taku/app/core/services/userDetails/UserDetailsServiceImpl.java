@@ -1,6 +1,6 @@
 package Taku.app.core.services.userDetails;
 
-import Taku.app.core.models.User;
+import Taku.app.core.models.users.User;
 import Taku.app.core.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -24,4 +24,5 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
         return UserDetailsImpl.build(user);
     }
+
 }

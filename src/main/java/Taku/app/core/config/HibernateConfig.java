@@ -30,7 +30,7 @@ public class HibernateConfig {
     public LocalSessionFactoryBean getSessionFactory() {
         System.out.println("Configuring sessionfactory bean");
         LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
-        factoryBean.setConfigLocation(new ClassPathResource("hibernate.cfg.xml"));
+        factoryBean.setConfigLocation(new ClassPathResource("config/hibernate.cfg.xml"));
 
         factoryBean.setDataSource(getDataSource());
         return factoryBean;

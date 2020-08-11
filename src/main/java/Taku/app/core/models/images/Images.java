@@ -1,4 +1,4 @@
-package Taku.app.core.models;
+package Taku.app.core.models.images;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.util.HashSet;

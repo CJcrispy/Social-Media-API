@@ -1,16 +1,15 @@
 package Taku.app.core.controllers;
 
-import Taku.app.core.models.ERole;
-import Taku.app.core.models.Roles;
-import Taku.app.core.payload.request.LoginRequest;
-import Taku.app.core.payload.request.RegisterRequest;
-import Taku.app.core.payload.response.JwtResponse;
-import Taku.app.core.payload.response.MessageResponse;
-import Taku.app.core.repositories.RoleRepository;
-import Taku.app.core.repositories.UserRepository;
+import Taku.app.core.models.users.*;
+import Taku.app.core.models.email_verification.VerificationForm;
+import Taku.app.core.payload.request.*;
+import Taku.app.core.payload.response.*;
+import Taku.app.core.repositories.*;
 import Taku.app.core.security.JwtUtils;
+import Taku.app.core.services.userDetails.EmailSenderService;
 import Taku.app.core.services.userDetails.UserDetailsImpl;
-import Taku.app.core.models.User;
+import Taku.app.core.models.users.User;
+import Taku.app.core.services.userDetails.VerificationTokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -19,6 +18,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 
 import javax.validation.Valid;
 import java.util.HashSet;
@@ -40,7 +41,16 @@ public class AuthenticationController {
     RoleRepository roleRepository;
 
     @Autowired
+    VerificationTokenRepository verificationTokenRepository;
+
+    @Autowired
     PasswordEncoder encoder;
+
+    @Autowired
+    VerificationTokenService verificationTokenService;
+
+    @Autowired
+    EmailSenderService emailSenderService;
 
     @Autowired
     JwtUtils jwtUtils;
@@ -166,5 +176,28 @@ public class AuthenticationController {
         userRepository.save(user);
 
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+    }
+
+    @GetMapping("/email-verification")
+    public String formGet(Model model) {
+        model.addAttribute("verificationForm", new VerificationForm());
+        return "verification-form";
+    }
+
+    @PostMapping("/email-verification")
+    public String formPost(@Valid VerificationForm verificationForm, BindingResult bindingResult, Model model) {
+        if (!bindingResult.hasErrors()) {
+            model.addAttribute("noErrors", true);
+        }
+        model.addAttribute("verificationForm", verificationForm);
+
+        verificationTokenService.createVerification(verificationForm.getEmail());
+        return "verification-form";
+    }
+
+    @GetMapping("/verify-email")
+    @ResponseBody
+    public String verifyEmail(String code) {
+        return verificationTokenService.verifyEmail(code).getBody();
     }
 }

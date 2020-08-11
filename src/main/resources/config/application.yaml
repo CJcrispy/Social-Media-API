@@ -21,6 +21,7 @@ spring:
 
     database-platform: org.hibernate.dialect.PostgreSQL9Dialect
 
+
 server:
    port: 8081
 
@@ -38,3 +39,23 @@ amazonProperties:
   accessKey: AKIAJM7XATHXFSWUNOHQ
   secretKey: 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
   bucketName: taku-images
+
+###### Email Properties ######
+mail:
+  smtp:
+    host: smtp.gmail.com
+    port: 587
+    username: example@gmail.com
+    password: examplepassword
+    properties:
+
+  verificationapi: http://localhost:8081/verify-email?code=
+#    mail:
+#      smtp:
+#        starttls:
+#          enable: true
+#          required: true
+#        auth: true
+#        connectiontimeout: 5000
+#        stimeout: 5000
+#        writetimeout: 5000

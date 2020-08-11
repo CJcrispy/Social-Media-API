@@ -1,4 +1,6 @@
-package Taku.app.core.models;
+package Taku.app.core.models.users;
+
+import Taku.app.core.models.email_verification.VerificationToken;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -45,6 +47,14 @@ public class User {
                 joinColumns = @JoinColumn(name = "user_id"),
                 inverseJoinColumns = @JoinColumn(name = "role_id"))
         private Set<Roles> roles = new HashSet<>();
+
+        @NotBlank
+        @Size(max = 10)
+        @Column(nullable = false)
+        private boolean isVerified;
+
+        @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+        private VerificationToken verificationToken;
 
         public User() {
         }
@@ -113,4 +123,21 @@ public class User {
         public void setRoles(Set<Roles> roles) {
                 this.roles = roles;
         }
+
+        public boolean isVerified() {
+                return isVerified;
+        }
+
+        public void setVerified(boolean isVerified) {
+                this.isVerified = isVerified;
+        }
+
+        public VerificationToken getVerificationToken() {
+                return verificationToken;
+        }
+
+        public void setVerificationToken(VerificationToken verificationToken) {
+                this.verificationToken = verificationToken;
+        }
+
 }

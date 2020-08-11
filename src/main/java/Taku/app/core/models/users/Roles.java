@@ -1,4 +1,4 @@
-package Taku.app.core.models;
+package Taku.app.core.models.users;
 
 import javax.persistence.*;
 
