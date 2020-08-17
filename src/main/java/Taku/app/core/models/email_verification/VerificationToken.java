@@ -4,18 +4,21 @@ import Taku.app.core.models.users.User;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
+@Table(	name = "verifyToken")
 public class VerificationToken {
 
     public static final String STATUS_PENDING = "PENDING";
     public static final String STATUS_VERIFIED = "VERIFIED";
+    public static final long HOUR = 3600*1000;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="token_id")
-    private long tokenid;
+    @Column(nullable = false, name="token_id")
+    private Long tokenid;
 
     @Column(name="confirmation_token")
     private String confirmationToken;
@@ -24,35 +27,38 @@ public class VerificationToken {
     private String status;
 
     @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime createdDate;
+    private Date createdDate;
 
     @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime expiredDate;
+    private Date expiredDate;
 
     @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime confirmedDate;
-
+    private Date confirmedDate;
 
     @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
     @JoinColumn(nullable = false, name = "user_id")
     private User user;
 
-    public VerificationToken(){
-
-    }
-
     public VerificationToken(User user) {
         this.user = user;
-        this.createdDate = LocalDateTime.now();
-        this.createdDate = this.getCreatedDate().plusDays(1);
+        this.createdDate = new Date();
+        this.expiredDate = new Date(this.createdDate.getTime() + 24 * HOUR);
         this.confirmationToken = UUID.randomUUID().toString();
+        this.status = STATUS_PENDING;
     }
 
-    public long getTokenid() {
+    public VerificationToken(){
+        this.createdDate = new Date();
+        this.expiredDate = new Date(this.createdDate.getTime() + 24 * HOUR);
+        this.confirmationToken = UUID.randomUUID().toString();
+        this.status = STATUS_PENDING;
+    }
+
+    public Long getTokenid() {
         return tokenid;
     }
 
-    public void setTokenid(long tokenid) {
+    public void setTokenid(Long tokenid) {
         this.tokenid = tokenid;
     }
 
@@ -64,11 +70,11 @@ public class VerificationToken {
         this.confirmationToken = confirmationToken;
     }
 
-    public LocalDateTime getCreatedDate() {
+    public Date getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(LocalDateTime createdDate) {
+    public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
     }
 
@@ -88,19 +94,19 @@ public class VerificationToken {
         this.status = status;
     }
 
-    public LocalDateTime getExpiredDate() {
+    public Date getExpiredDate() {
         return expiredDate;
     }
 
-    public void setExpiredDate(LocalDateTime expiredDate) {
+    public void setExpiredDate(Date expiredDate) {
         this.expiredDate = expiredDate;
     }
 
-    public LocalDateTime getConfirmedDate() {
+    public Date getConfirmedDate() {
         return confirmedDate;
     }
 
-    public void setConfirmedDate(LocalDateTime confirmedDate) {
+    public void setConfirmedDate(Date confirmedDate) {
         this.confirmedDate = confirmedDate;
     }
 }

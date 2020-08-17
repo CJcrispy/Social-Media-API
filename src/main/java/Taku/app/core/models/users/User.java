@@ -48,9 +48,6 @@ public class User {
                 inverseJoinColumns = @JoinColumn(name = "role_id"))
         private Set<Roles> roles = new HashSet<>();
 
-        @NotBlank
-        @Size(max = 10)
-        @Column(nullable = false)
         private boolean isVerified;
 
         @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
@@ -66,6 +63,7 @@ public class User {
                 this.business_name = business_name;
                 this.email = email;
                 this.password = password;
+                this.isVerified = false;
         }
 
         public Long getId() {

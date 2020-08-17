@@ -1,6 +1,5 @@
 package Taku.app.core.repositories;
 
-import java.util.List;
 import java.util.Optional;
 
 import Taku.app.core.models.users.User;
@@ -13,5 +12,5 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     Boolean existsByEmail(String email);
 
-    List<User> findByEmailIgnoreCase(String email);
+    User findByEmailIgnoreCase(String email);
 }

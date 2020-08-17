@@ -1,62 +1,64 @@
 package Taku.app.core.models.email_verification;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConfigurationProperties(prefix = "mail")
+@Configuration
 public class MailProperties {
-    public static class SMTP {
-        String host;
-        String port;
-        String username;
-        String password;
 
-        public String getHost() {
-            return host;
-        }
+    @Value("${spring.mail.host}")
+    String host;
 
-        public void setHost(String host) {
-            this.host = host;
-        }
+    @Value("${spring.mail.port}")
+    String port;
 
-        public String getPort() {
-            return port;
-        }
+    @Value("${spring.mail.username}")
+    String username;
 
-        public void setPort(String port) {
-            this.port = port;
-        }
+    @Value("${spring.mail.password}")
+    String password;
 
-        public String getUsername() {
-            return username;
-        }
-
-        public void setUsername(String username) {
-            this.username = username;
-        }
-
-        public String getPassword() {
-            return password;
-        }
-
-        public void setPassword(String password) {
-            this.password = password;
-        }
-    }
-
-    private SMTP smtp;
     private String from;
     private String fromName;
+
+    @Value("${spring.mail.verificationapi}")
     private String verificationapi;
 
-    public SMTP getSmtp() {
-        return smtp;
+    public String getHost() {
+        return host;
     }
 
-    public void setSmtp(SMTP smtp) {
-        this.smtp = smtp;
+    public void setHost(String host) {
+        this.host = host;
     }
+
+    public String getPort() {
+        return port;
+    }
+
+    public void setPort(String port) {
+        this.port = port;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
 
     public String getFrom() {
         return from;
