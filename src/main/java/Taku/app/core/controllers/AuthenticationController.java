@@ -3,7 +3,6 @@ package Taku.app.core.controllers;
 import Taku.app.core.models.email_verification.MailProperties;
 import Taku.app.core.models.email_verification.VerificationToken;
 import Taku.app.core.models.users.*;
-import Taku.app.core.models.email_verification.VerificationForm;
 import Taku.app.core.payload.request.*;
 import Taku.app.core.payload.response.*;
 import Taku.app.core.repositories.*;
@@ -14,7 +13,7 @@ import Taku.app.core.models.users.User;
 import Taku.app.core.services.userDetails.VerificationTokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.mail.SimpleMailMessage;
+
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -57,9 +56,6 @@ public class AuthenticationController {
     @Autowired
     JwtUtils jwtUtils;
 
-    @Autowired
-    MailProperties mailProperties;
-
     @PostMapping("/login")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
@@ -80,11 +76,12 @@ public class AuthenticationController {
                 userDetails.getLast_name(),
                 userDetails.getBusiness_name(),
                 userDetails.getEmail(),
+                userDetails.isVerified(),
                 roles));
     }
 
     @PostMapping("/register-member")
-    public ResponseEntity<?> registerUser(@Valid @RequestBody RegisterRequest signUpRequest) {
+    public ResponseEntity<?> registerUser(@Valid @RequestBody RegisterRequest signUpRequest, ModelAndView modelAndView) {
 
         if (userRepository.existsByEmail(signUpRequest.getEmail())) {
             return ResponseEntity
@@ -129,6 +126,16 @@ public class AuthenticationController {
 
         user.setRoles(roles);
         userRepository.save(user);
+
+        VerificationToken verificationToken = new VerificationToken(user);
+
+        verificationTokenRepository.save(verificationToken);
+
+        emailSenderService.sendEmail(signUpRequest.getEmail());
+
+        modelAndView.addObject("emailId", signUpRequest.getEmail());
+
+        modelAndView.setViewName("successfulRegisteration");
 
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
     }
@@ -180,28 +187,11 @@ public class AuthenticationController {
         user.setRoles(roles);
         userRepository.save(user);
 
-//        verificationTokenService.createVerification(signUpRequest.getEmail());
-
         VerificationToken verificationToken = new VerificationToken(user);
 
         verificationTokenRepository.save(verificationToken);
 
-        SimpleMailMessage mailMessage = new SimpleMailMessage();
-        System.out.println("mail to whom: " + signUpRequest.getEmail());
-        mailMessage.setTo(signUpRequest.getEmail());
-
-        mailMessage.setSubject("Complete Registration!");
-
-        mailMessage.setFrom(mailProperties.getUsername());
-        System.out.println("mail to whom: " + mailProperties.getUsername());
-
-        mailMessage.setText("To confirm your account, please click here : "
-                + mailProperties.getVerificationapi() + verificationToken.getConfirmationToken());
-
-
-        System.out.println("To confirm your account, please click here : "
-                + "http://localhost:8081/verify-email?token="+ verificationToken.getConfirmationToken());
-        emailSenderService.sendEmail(mailMessage, signUpRequest.getEmail());
+        emailSenderService.sendEmail(signUpRequest.getEmail());
 
         modelAndView.addObject("emailId", signUpRequest.getEmail());
 
@@ -210,77 +200,12 @@ public class AuthenticationController {
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
     }
 
-//    @GetMapping("/email-verification")
-////    public String formGet(Model model) {
-////        model.addAttribute("verificationForm", new VerificationForm());
-////        return "verification-form";
-////    }
-////
-////    @PostMapping("/email-verification")
-////    public String formPost(@Valid @RequestBody VerificationForm verificationForm, BindingResult bindingResult, Model model) {
-////
-////        System.out.println("email that needs to be verified: " + verificationForm.getEmail());
-////        if (!bindingResult.hasErrors()) {
-////            model.addAttribute("noErrors", true);
-////        }
-////        model.addAttribute("verificationForm", verificationForm);
-////
-////        verificationTokenService.createVerification(verificationForm.getEmail());
-////        return "verification-form";
-////    }
 
-    @GetMapping("/verify-email")
-    @ResponseBody
-    public String verifyEmail(String code) {
-        return verificationTokenService.verifyEmail(code).getBody();
+    @PostMapping("/verify-email")
+    public String verifyEmail(@Valid @RequestBody CodeVerificationRequest codeVerificationRequest) {
+        System.out.println("token: " + codeVerificationRequest.getToken());
+        return verificationTokenService.verifyEmail(codeVerificationRequest.getToken()).getBody();
     }
-
-    @RequestMapping(value="/register", method=RequestMethod.GET)
-    public ModelAndView displayRegistration(ModelAndView modelAndView, User user)
-    {
-        modelAndView.addObject("user", user);
-        modelAndView.setViewName("register");
-        return modelAndView;
-    }
-
-    @RequestMapping(value="/register", method=RequestMethod.POST)
-    public ModelAndView registerUser(ModelAndView modelAndView, User user)
-    {
-
-//        User existingUser = userRepository.findByEmail(user.getEmail());
-//        if(existingUser != null)
-//        {
-//            modelAndView.addObject("message","This email already exists!");
-//            modelAndView.setViewName("error");
-//        }
-//        else
-//        {
-//            userRepository.save(user);
-//
-//            VerificationToken verificationToken = new VerificationToken();
-//
-//            verificationTokenRepository.save(verificationToken);
-//
-//            SimpleMailMessage mailMessage = new SimpleMailMessage();
-//            mailMessage.setTo(user.getEmail());
-//            mailMessage.setSubject("Complete Registration!");
-//            mailMessage.setFrom(MailProperties.
-//                    );
-//            mailMessage.setText("To confirm your account, please click here : "
-//                    +"http://localhost:8082/confirm-account?token="+ verificationToken.getConfirmationToken());
-//
-//            emailSenderService.sendEmail(mailMessage);
-//
-//            modelAndView.addObject("emailId", user.getEmail());
-//
-//            modelAndView.setViewName("successfulRegisteration");
-//        }
-
-        return modelAndView;
-    }
-
-
-
 
 
 

@@ -1,10 +1,8 @@
 package Taku.app.core.services.userDetails;
 
 import Taku.app.core.models.email_verification.MailProperties;
-import Taku.app.core.models.email_verification.VerificationForm;
 import Taku.app.core.models.email_verification.VerificationToken;
 import Taku.app.core.models.users.User;
-import Taku.app.core.repositories.UserRepository;
 import Taku.app.core.repositories.VerificationTokenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
@@ -17,10 +15,14 @@ import java.util.*;
 @Service("emailSenderService")
 public class EmailSenderService {
 
+    @Autowired
     private JavaMailSender javaMailSender;
 
     @Autowired
     VerificationTokenRepository verificationTokenRepository;
+
+    @Autowired
+    MailProperties mailProperties;
 
     @Autowired
     public EmailSenderService(JavaMailSender javaMailSender) {
@@ -28,7 +30,7 @@ public class EmailSenderService {
     }
 
     @Async
-    public void sendEmail(SimpleMailMessage email, String email_reciever) {
+    public void sendEmail(String email_reciever) {
 
         User user = new User();
         List<VerificationToken> verificationTokens = verificationTokenRepository.findByUserEmail(email_reciever);
@@ -42,8 +44,22 @@ public class EmailSenderService {
         }
 
         System.out.println("verification token: " + verificationToken.getConfirmationToken());
+        SimpleMailMessage mailMessage = new SimpleMailMessage();
+        System.out.println("mail to whom: " + email_reciever);
+        mailMessage.setTo(email_reciever);
+
+        mailMessage.setSubject("Complete Registration!");
+
+        mailMessage.setFrom(mailProperties.getUsername());
+        System.out.println("mail from whom: " + mailProperties.getUsername());
+
+        mailMessage.setText("To confirm your account, please click here : "
+                + mailProperties.getVerificationapi() + verificationToken.getConfirmationToken());
 
 
-        javaMailSender.send(email);
+        System.out.println("To confirm your account, please click here : "
+                + "http://localhost:4200/verify-email?token="+ verificationToken.getConfirmationToken());
+
+        javaMailSender.send(mailMessage);
     }
 }

@@ -28,12 +28,14 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: digisoul.bot@gmail.com
+    username: digisoul.bot
     password: goldenblue23!
-    verificationapi: http://localhost:8081/verify-email?code=
+    verificationapi: http://localhost:4200/verify-email?code=
     properties:
       mail:
         smtp:
+          ssl:
+            trust: smtp.gmail.com
           starttls:
             enable: true
             required: true

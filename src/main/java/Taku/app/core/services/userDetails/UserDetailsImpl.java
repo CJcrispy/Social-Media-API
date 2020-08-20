@@ -26,6 +26,8 @@ public class UserDetailsImpl implements UserDetails {
 
     private String email;
 
+    private boolean isVerified;
+
     @JsonIgnore
     private String password;
 
@@ -33,6 +35,7 @@ public class UserDetailsImpl implements UserDetails {
 
     public UserDetailsImpl(Long id, String first_name,
                            String last_name, String business_name, String email, String password,
+                           boolean isVerified,
                            Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
         this.first_name = first_name;
@@ -40,6 +43,7 @@ public class UserDetailsImpl implements UserDetails {
         this.business_name = business_name;
         this.email = email;
         this.password = password;
+        this.isVerified = isVerified;
         this.authorities = authorities;
     }
 
@@ -55,6 +59,7 @@ public class UserDetailsImpl implements UserDetails {
                 user.getBusiness_name(),
                 user.getEmail(),
                 user.getPassword(),
+                user.isVerified(),
                 authorities);
     }
 
@@ -112,6 +117,15 @@ public class UserDetailsImpl implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
+    public boolean isVerified() {
+        return isVerified;
+    }
+
+    public void setVerified(boolean verified) {
+        isVerified = verified;
+    }
+
 
     @Override
     public boolean equals(Object o) {
