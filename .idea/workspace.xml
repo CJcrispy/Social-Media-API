@@ -2,31 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9d3ac59-355a-4a29-9453-a0ced116c11c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/payload/request/CodeVerificationRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/profile/Profile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/payload/request/RetryCodeVerificationRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/repositories/ProfileRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/profile/ProfileService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/config/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/controllers/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/controllers/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/email_verification/VerificationForm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/payload/response/JwtResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/payload/response/JwtResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/repositories/UserRepository2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/controllers/ImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/controllers/SocialController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/email_verification/VerificationToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/email_verification/VerificationToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/images/Images.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/profile/Images.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/users/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/images/AmazonClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/images/AmazonClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/images/ImageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/images/ImageService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/userDetails/EmailSenderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/userDetails/EmailSenderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/userDetails/UserDetailsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/userDetails/UserDetailsImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/userDetails/VerificationTokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/userDetails/VerificationTokenService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/email-verification.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/verification-form.ftl" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/controllers/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/controllers/AuthenticationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/models/email_verification/VerificationForm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/payload/response/JwtResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/payload/response/JwtResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/repositories/UserRepository2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/models/email_verification/VerificationToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/models/email_verification/VerificationToken.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/models/users/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/models/users/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/services/userDetails/EmailSenderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/services/userDetails/EmailSenderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/services/userDetails/UserDetailsImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/services/userDetails/UserDetailsImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/services/userDetails/VerificationTokenService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/services/userDetails/VerificationTokenService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/config/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/config/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/email-verification.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/verification-form.ftl" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,9 +32,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="HTML File" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -142,10 +137,10 @@
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
     <state x="2650" y="327" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1597171483931" />
-    <state x="2885" y="132" key="#com.intellij.ide.util.MemberChooser" timestamp="1597810634538">
+    <state x="2600" y="131" key="#com.intellij.ide.util.MemberChooser" timestamp="1598537513788">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state x="2885" y="132" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1597810634538" />
+    <state x="2600" y="131" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1598537513788" />
     <state x="2529" y="268" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1596475490158">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
@@ -164,42 +159,42 @@
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
     <state x="2425" y="5" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1597123694995" />
-    <state width="1877" height="338" key="GridCell.Tab.0.bottom" timestamp="1597942965579">
+    <state width="1877" height="338" key="GridCell.Tab.0.bottom" timestamp="1598310159377">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1597942965579" />
+    <state width="1877" height="338" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1598310159377" />
     <state width="1877" height="365" key="GridCell.Tab.0.bottom/0.0.1920.999/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596835068759" />
-    <state width="1877" height="338" key="GridCell.Tab.0.center" timestamp="1597942965579">
+    <state width="1877" height="338" key="GridCell.Tab.0.center" timestamp="1598310159377">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.0.center/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1597942965579" />
+    <state width="1877" height="338" key="GridCell.Tab.0.center/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1598310159377" />
     <state width="1877" height="365" key="GridCell.Tab.0.center/0.0.1920.999/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596835068758" />
-    <state width="1877" height="338" key="GridCell.Tab.0.left" timestamp="1597942965578">
+    <state width="1877" height="338" key="GridCell.Tab.0.left" timestamp="1598310159377">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.0.left/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1597942965578" />
+    <state width="1877" height="338" key="GridCell.Tab.0.left/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1598310159377" />
     <state width="1877" height="365" key="GridCell.Tab.0.left/0.0.1920.999/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596835068758" />
-    <state width="1877" height="338" key="GridCell.Tab.0.right" timestamp="1597942965579">
+    <state width="1877" height="338" key="GridCell.Tab.0.right" timestamp="1598310159377">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.0.right/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1597942965579" />
+    <state width="1877" height="338" key="GridCell.Tab.0.right/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1598310159377" />
     <state width="1877" height="365" key="GridCell.Tab.0.right/0.0.1920.999/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596835068759" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1595440226950">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1598028576744">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595440226950" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1595440226950">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1598028576744" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1598028576744">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595440226950" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1595440226950">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1598028576744" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1598028576744">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595440226950" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1595440226950">
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1598028576744" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1598028576744">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595440226950" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1598028576744" />
     <state x="2012" y="97" width="1736" height="856" key="dock-window-1" timestamp="1594519560472">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
@@ -208,10 +203,10 @@
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
     <state x="2262" y="226" key="new project wizard/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595275954091" />
-    <state x="2622" y="154" key="refactoring.ChangeSignatureDialog" timestamp="1597635301491">
+    <state x="2622" y="154" key="refactoring.ChangeSignatureDialog" timestamp="1598028332015">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state x="2622" y="154" key="refactoring.ChangeSignatureDialog/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1597635301491" />
+    <state x="2622" y="154" key="refactoring.ChangeSignatureDialog/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1598028332015" />
     <state x="2536" y="243" key="run.anything.popup" timestamp="1597292746220">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>

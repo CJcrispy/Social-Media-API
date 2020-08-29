@@ -1,6 +1,5 @@
 package Taku.app.core.controllers;
 
-import Taku.app.core.models.email_verification.MailProperties;
 import Taku.app.core.models.email_verification.VerificationToken;
 import Taku.app.core.models.users.*;
 import Taku.app.core.payload.request.*;
@@ -202,9 +201,26 @@ public class AuthenticationController {
 
 
     @PostMapping("/verify-email")
-    public String verifyEmail(@Valid @RequestBody CodeVerificationRequest codeVerificationRequest) {
-        System.out.println("token: " + codeVerificationRequest.getToken());
-        return verificationTokenService.verifyEmail(codeVerificationRequest.getToken()).getBody();
+    public String verifyEmail(String code) {
+        System.out.println("token: " + code);
+        return verificationTokenService.verifyEmail(code).getBody();
+    }
+
+    @PostMapping("/retry-validation")
+    public  ResponseEntity<?> retryEmailValidation(@Valid @RequestBody RetryCodeVerificationRequest retryCodeVerificationRequest,
+                                                   ModelAndView modelAndView){
+        if (userRepository.existsByEmail(retryCodeVerificationRequest.getEmail())){
+
+            emailSenderService.retryEmail(retryCodeVerificationRequest.getEmail());
+
+            modelAndView.addObject("emailId", retryCodeVerificationRequest.getEmail());
+
+            modelAndView.setViewName("successfulRegisteration");
+        } else{
+            return ResponseEntity.badRequest().body(new MessageResponse("Error: Email does not exist!"));
+        }
+
+        return ResponseEntity.ok(new MessageResponse("retry email validation link completed successfully!"));
     }
 
 

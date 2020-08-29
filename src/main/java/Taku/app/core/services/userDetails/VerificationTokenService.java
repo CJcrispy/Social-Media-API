@@ -39,10 +39,12 @@ public class VerificationTokenService {
 
         verificationToken.setConfirmedDate(new Date(System.currentTimeMillis()));
         verificationToken.setStatus(VerificationToken.STATUS_VERIFIED);
-        System.out.println("user: " + verificationToken.getUser());
         verificationToken.getUser().setVerified(true);
+        userRepository.save(verificationToken.getUser());
         verificationTokenRepository.save(verificationToken);
 
         return ResponseEntity.ok("You have successfully verified your email address.");
     }
+
+
 }

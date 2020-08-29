@@ -43,6 +43,9 @@ public class AmazonClient {
 
     public String uploadFile(MultipartFile multipartFile) {
         String fileUrl = "";
+        //Checkif file is an image
+
+        //upload image
         try {
             File file = convertMultiPartToFile(multipartFile);
             String fileName = generateFileName(multipartFile);

@@ -1,6 +1,7 @@
 package Taku.app.core.models.users;
 
 import Taku.app.core.models.email_verification.VerificationToken;
+import Taku.app.core.models.profile.Profile;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -50,8 +51,11 @@ public class User {
 
         private boolean isVerified;
 
-        @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+        @OneToOne(mappedBy = "user", orphanRemoval=true, cascade = CascadeType.DETACH)
         private VerificationToken verificationToken;
+
+        @OneToOne(mappedBy = "user", orphanRemoval=true, cascade = CascadeType.DETACH)
+        private Profile profile;
 
         public User() {
         }

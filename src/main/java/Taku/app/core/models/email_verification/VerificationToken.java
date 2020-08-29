@@ -3,7 +3,7 @@ package Taku.app.core.models.email_verification;
 import Taku.app.core.models.users.User;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import javax.validation.constraints.*;
 import java.util.Date;
 import java.util.UUID;
 
@@ -35,7 +35,8 @@ public class VerificationToken {
     @Temporal(TemporalType.TIMESTAMP)
     private Date confirmedDate;
 
-    @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
+    @ManyToOne(targetEntity = User.class, fetch = FetchType.EAGER,
+             cascade = CascadeType.DETACH)
     @JoinColumn(nullable = false, name = "user_id")
     private User user;
 
