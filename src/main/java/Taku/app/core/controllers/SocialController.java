@@ -31,35 +31,52 @@ public class SocialController {
 
     //Profile
     @PostMapping("/createProfile")
-    public String createProfile(@Valid @RequestBody RegisterRequest signUpRequest){
+    @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
+    public ResponseEntity<?> createProfile(@Valid @RequestBody RegisterRequest signUpRequest){
 
+        if (userRepository.existsByEmail(signUpRequest.getEmail())){
+            User user = userRepository.findByEmail(signUpRequest.getEmail());
+            profileService.createProfile(user);
+        }
 
-        profileService.createProfile();
+        
         return null;
     }
 
     @GetMapping("/retrieveProfile")
+    @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
     public String getProfile() {
         return null;
     }
 
     @PutMapping("/updateProfile")
+    @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
     public String updateProfile(){
+        return null;
+    }
+
+    //admin only api
+    @DeleteMapping("/admin/deleteProfile")
+    @PreAuthorize("hasRole('Admin')")
+    public String deleteProfile(){
         return null;
     }
 
     //Followers
     @GetMapping("/getFollower")
+    @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
     public String getFollowers(){
 
         return null;
     }
     @PostMapping("/addFollower")
+    @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
     public String addFollower(){
 
         return null;
     }
     @DeleteMapping("removeFollower")
+    @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
     public String removeFollowers(){
 
         return null;
@@ -85,16 +102,19 @@ public class SocialController {
 
     //Pictures
     @PostMapping("/uploadProfilePic")
+    @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
     public String uploadProfilePic(@RequestPart(value = "file") MultipartFile file) {
         return this.amazonClient.uploadFile(file);
     }
 
     @PostMapping("/uploadPhoto")
+    @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
     public String uploadPhoto(@RequestPart(value = "file") MultipartFile file){
         return this.amazonClient.uploadFile(file);
     }
 
     @DeleteMapping("/deletePhoto")
+    @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
     public String deleteFile(@RequestPart(value = "url") String fileUrl) {
         return this.amazonClient.deleteFileFromS3Bucket(fileUrl);
     }

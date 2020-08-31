@@ -31,6 +31,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/api/auth")
 public class AuthenticationController {
+    
     @Autowired
     AuthenticationManager authenticationManager;
 
@@ -76,6 +77,7 @@ public class AuthenticationController {
                 userDetails.getBusiness_name(),
                 userDetails.getEmail(),
                 userDetails.isVerified(),
+                userDetails.getProfile(),
                 roles));
     }
 

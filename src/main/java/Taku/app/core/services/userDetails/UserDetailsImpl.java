@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+import Taku.app.core.models.profile.Profile;
 import Taku.app.core.models.users.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -28,6 +29,8 @@ public class UserDetailsImpl implements UserDetails {
 
     private boolean isVerified;
 
+    private Profile profile;
+
     @JsonIgnore
     private String password;
 
@@ -35,7 +38,7 @@ public class UserDetailsImpl implements UserDetails {
 
     public UserDetailsImpl(Long id, String first_name,
                            String last_name, String business_name, String email, String password,
-                           boolean isVerified,
+                           boolean isVerified, Profile profile,
                            Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
         this.first_name = first_name;
@@ -44,6 +47,7 @@ public class UserDetailsImpl implements UserDetails {
         this.email = email;
         this.password = password;
         this.isVerified = isVerified;
+        this.profile = profile;
         this.authorities = authorities;
     }
 
@@ -60,6 +64,7 @@ public class UserDetailsImpl implements UserDetails {
                 user.getEmail(),
                 user.getPassword(),
                 user.isVerified(),
+                user.getProfile(),
                 authorities);
     }
 
@@ -124,6 +129,14 @@ public class UserDetailsImpl implements UserDetails {
 
     public void setVerified(boolean verified) {
         isVerified = verified;
+    }
+
+    public Profile getProfile(){
+        return profile;
+    }
+
+    public void setProfile(Profile profile){
+        this.profile = profile;
     }
 
 

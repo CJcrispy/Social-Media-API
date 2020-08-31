@@ -12,9 +12,11 @@ public class JwtResponse {
     private String email;
     private List<String> roles;
     private boolean isVerified;
+    private Profile profile;
 
     public JwtResponse(String accessToken, Long id, String first_name,
                        String last_name, String business_name, String email, boolean verified,
+                       Profile profile,
                        List<String> roles) {
         this.token = accessToken;
         this.id = id;
@@ -24,6 +26,7 @@ public class JwtResponse {
         this.email = email;
         this.roles = roles;
         this.isVerified = verified;
+        this.profile = profile;
     }
 
     public String getAccessToken() {
@@ -94,5 +97,14 @@ public class JwtResponse {
     public void setVerified(boolean verified) {
         isVerified = verified;
     }
+
+    public Profile getProfile(){
+        return profile;
+    }
+
+    public void setProfile(Profile profile){
+        this.profile = profile;
+    }
+
 
 }
