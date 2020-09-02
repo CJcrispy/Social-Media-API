@@ -1,5 +1,7 @@
 package Taku.app.core.payload.response;
 
+import Taku.app.core.models.profile.Profile;
+
 import java.util.List;
 
 public class JwtResponse {
@@ -28,6 +30,7 @@ public class JwtResponse {
         this.isVerified = verified;
         this.profile = profile;
     }
+
 
     public String getAccessToken() {
         return token;

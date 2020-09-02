@@ -1,14 +1,21 @@
 package Taku.app.core.controllers;
 
-import Taku.app.core.payload.request.RegisterRequest;
+import Taku.app.core.models.profile.Profile;
+import Taku.app.core.models.users.User;
+import Taku.app.core.payload.request.ProfileRequest;
+import Taku.app.core.payload.request.RequestByEmail;
+import Taku.app.core.repositories.ProfileRepository;
 import Taku.app.core.repositories.UserRepository;
 import Taku.app.core.services.images.AmazonClient;
 import Taku.app.core.services.profile.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -27,16 +34,20 @@ public class SocialController {
     ProfileService profileService;
 
     @Autowired
+    ProfileRepository profileRepository;
+
+    @Autowired
     UserRepository userRepository;
 
     //Profile
     @PostMapping("/createProfile")
-    @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
-    public ResponseEntity<?> createProfile(@Valid @RequestBody RegisterRequest signUpRequest){
+    public ResponseEntity<?> createProfile(@Valid @RequestBody RequestByEmail requestByEmail){
 
-        if (userRepository.existsByEmail(signUpRequest.getEmail())){
-            User user = userRepository.findByEmail(signUpRequest.getEmail());
+        if (userRepository.existsByEmail(requestByEmail.getEmail())){
+            User user = userRepository.findByEmailIgnoreCase(requestByEmail.getEmail());
             profileService.createProfile(user);
+            Profile profile = new Profile(user);
+            profileRepository.save(profile);
         }
 
         
@@ -51,7 +62,12 @@ public class SocialController {
 
     @PutMapping("/updateProfile")
     @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
-    public String updateProfile(){
+    public String updateProfile(@Valid @RequestBody ProfileRequest profileRequest){
+
+        profileService.validateProfile(profileRequest.getProfileId(), profileRequest.getProfileLink());
+
+
+
         return null;
     }
 
@@ -61,6 +77,8 @@ public class SocialController {
     public String deleteProfile(){
         return null;
     }
+
+
 
     //Followers
     @GetMapping("/getFollower")
@@ -83,18 +101,18 @@ public class SocialController {
     }
 
     //Following
-    @GetMapping("/getFollower")
-    public String getFollowees(){
+    @GetMapping("/getFollowing")
+    public String getFollowing(){
 
         return null;
     }
-    @PostMapping("/addFollower")
-    public String addFollowee(){
+    @PostMapping("/addFollowing")
+    public String addFollowing(){
 
         return null;
     }
-    @DeleteMapping("removeFollower")
-    public String removeFollowee(){
+    @DeleteMapping("removeFollowing")
+    public String removeFollowing(){
 
         return null;
     }

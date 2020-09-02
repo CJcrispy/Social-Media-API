@@ -1,11 +1,13 @@
 package Taku.app.core.controllers;
 
 import Taku.app.core.models.email_verification.VerificationToken;
+import Taku.app.core.models.profile.Profile;
 import Taku.app.core.models.users.*;
 import Taku.app.core.payload.request.*;
 import Taku.app.core.payload.response.*;
 import Taku.app.core.repositories.*;
 import Taku.app.core.security.JwtUtils;
+import Taku.app.core.services.profile.ProfileService;
 import Taku.app.core.services.userDetails.EmailSenderService;
 import Taku.app.core.services.userDetails.UserDetailsImpl;
 import Taku.app.core.models.users.User;
@@ -54,6 +56,9 @@ public class AuthenticationController {
     EmailSenderService emailSenderService;
 
     @Autowired
+    ProfileService profileService;
+
+    @Autowired
     JwtUtils jwtUtils;
 
     @PostMapping("/login")
@@ -90,7 +95,7 @@ public class AuthenticationController {
                     .body(new MessageResponse("Error: Email is already in use!"));
         }
 
-        // Create new user's account
+        // Create new user's account and logs info into database
         User user = new User(signUpRequest.getFirst_name(), signUpRequest.getLast_name(),
                 signUpRequest.getBusiness_name(), signUpRequest.getEmail(),
                 encoder.encode(signUpRequest.getPassword()));
@@ -128,6 +133,10 @@ public class AuthenticationController {
         user.setRoles(roles);
         userRepository.save(user);
 
+        //Creates User profile
+        profileService.createProfile(user);
+
+        //Sends out validation email
         VerificationToken verificationToken = new VerificationToken(user);
 
         verificationTokenRepository.save(verificationToken);
@@ -150,7 +159,7 @@ public class AuthenticationController {
                     .body(new MessageResponse("Error: Email is already in use!"));
         }
 
-        // Create new user's account
+        // Create new user's account and logs info into database
         User user = new User(signUpRequest.getFirst_name(), signUpRequest.getLast_name(),
                 signUpRequest.getBusiness_name(), signUpRequest.getEmail(),
                 encoder.encode(signUpRequest.getPassword()));
@@ -188,6 +197,10 @@ public class AuthenticationController {
         user.setRoles(roles);
         userRepository.save(user);
 
+        //Creates User profile
+        profileService.createProfile(user);
+
+        //Sends out validation email
         VerificationToken verificationToken = new VerificationToken(user);
 
         verificationTokenRepository.save(verificationToken);
@@ -209,13 +222,13 @@ public class AuthenticationController {
     }
 
     @PostMapping("/retry-validation")
-    public  ResponseEntity<?> retryEmailValidation(@Valid @RequestBody RetryCodeVerificationRequest retryCodeVerificationRequest,
+    public  ResponseEntity<?> retryEmailValidation(@Valid @RequestBody RequestByEmail requestByEmail,
                                                    ModelAndView modelAndView){
-        if (userRepository.existsByEmail(retryCodeVerificationRequest.getEmail())){
+        if (userRepository.existsByEmail(requestByEmail.getEmail())){
 
-            emailSenderService.retryEmail(retryCodeVerificationRequest.getEmail());
+            emailSenderService.retryEmail(requestByEmail.getEmail());
 
-            modelAndView.addObject("emailId", retryCodeVerificationRequest.getEmail());
+            modelAndView.addObject("emailId", requestByEmail.getEmail());
 
             modelAndView.setViewName("successfulRegisteration");
         } else{

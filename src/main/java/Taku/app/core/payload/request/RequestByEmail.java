@@ -2,7 +2,7 @@ package Taku.app.core.payload.request;
 
 import javax.validation.constraints.NotBlank;
 
-public class RetryCodeVerificationRequest {
+public class RequestByEmail {
 
     @NotBlank
     private String email;

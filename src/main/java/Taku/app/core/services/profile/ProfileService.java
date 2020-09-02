@@ -2,10 +2,14 @@ package Taku.app.core.services.profile;
 
 import Taku.app.core.models.profile.Profile;
 import Taku.app.core.models.users.User;
+import Taku.app.core.payload.response.MessageResponse;
 import Taku.app.core.repositories.ProfileRepository;
+import Taku.app.core.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Random;
 
 @Service
@@ -14,41 +18,36 @@ public class ProfileService {
     @Autowired
     ProfileRepository profileRepository;
 
-    //we want random alphanumeric string of 20 characters
-    private static final int OUTPUT_STRING_LENGTH = 20;
+    @Autowired
+    UserRepository userRepository;
 
-    public String generateProfileLink(){
-        //string containing allowed characters, modify according to your needs
-        String strAllowedCharacters =
-                "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        //initialize Random
-        Random random = new Random();
-        System.out.println("Random alphanumeric string of 20 characters");
-        for(int i=0; i<10; i++){
-            System.out.println( getNextRandomString(strAllowedCharacters, random) );
-        }
-        return null;
-    }
+    public ResponseEntity<String> createProfile(User user){
 
+        List<Profile> profileList = profileRepository.findByUser(user);
 
-    private static String getNextRandomString(String strAllowedCharacters, Random random) {
-        StringBuilder sbRandomString = new StringBuilder(OUTPUT_STRING_LENGTH);
-        for(int i = 0 ; i < OUTPUT_STRING_LENGTH; i++){
-            //get random integer between 0 and string length
-            int randomInt = random.nextInt(strAllowedCharacters.length());
-
-            //get char from randomInt index from string and append in StringBuilder
-            sbRandomString.append( strAllowedCharacters.charAt(randomInt) );
-        }
-        return sbRandomString.toString();
-    }
-
-
-    public String createProfile(User user){
 
         Profile profile = new Profile(user);
         profileRepository.save(profile);
 
         return null;
     }
+
+
+    public ResponseEntity<?> validateProfile(Long id){
+
+       if (userRepository.exisitsById(id) == true) {
+           User user = userRepository.findByUserId(id);
+
+           updateProfile(user);
+       } else {
+           return ResponseEntity
+                   .badRequest()
+                   .body(new MessageResponse("Error: Email is already in use!"));
+       }
+
+        return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+    }
+
+    public ResponseEntity<String> updateProfile(User user){ return null; }
+
 }

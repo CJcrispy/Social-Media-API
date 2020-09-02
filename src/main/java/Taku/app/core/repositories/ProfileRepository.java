@@ -9,9 +9,9 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ProfileRepository extends JpaRepository<Profile, String> {
+public interface ProfileRepository extends JpaRepository<Profile, Long> {
 
-    List<Profile> findByProfileLink(String link);
+    List<Profile> findByLink(String link);
 
     List<Profile> findByProfileId(Long id);
 

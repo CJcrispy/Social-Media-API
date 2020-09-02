@@ -19,17 +19,15 @@ public class Profile {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, name="profile_id")
-    private Long profile_id;
+    private Long profileId;
 
     private String bio;
 
     private String occupation;
 
-    @NotBlank
     @Column(nullable = false)
     private HashMap<Integer, User> followers;
 
-    @NotBlank
     @Column(nullable = false)
     private HashMap<Integer, User> following;
 
@@ -56,11 +54,11 @@ public class Profile {
 
 
     public Long getProfile_id() {
-        return profile_id;
+        return profileId;
     }
 
     public void setProfile_id(Long profile_id) {
-        this.profile_id = profile_id;
+        this.profileId = profile_id;
     }
 
     public String getBio() {

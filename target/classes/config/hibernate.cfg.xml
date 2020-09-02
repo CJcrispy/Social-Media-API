@@ -11,6 +11,9 @@
         <mapping class="Taku.app.core.models.users.Roles"/>
         <mapping class="Taku.app.core.models.users.User"/>
 
+        <mapping class="Taku.app.core.models.profile.Profile"/>
+        <mapping class="Taku.app.core.models.profile.Images"/>
+
         <mapping class="Taku.app.core.models.email_verification.VerificationToken"/>
         <mapping class="Taku.app.core.models.email_verification.MailProperties"/>
     </session-factory>
