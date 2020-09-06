@@ -56,7 +56,7 @@ public class SocialController {
 
     @GetMapping("/retrieveProfile")
     @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
-    public String getProfile() {
+    public String getProfile(@Valid @RequestBody ProfileRequest profileRequest) {
         return null;
     }
 
@@ -64,7 +64,7 @@ public class SocialController {
     @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
     public String updateProfile(@Valid @RequestBody ProfileRequest profileRequest){
 
-        profileService.validateProfile(profileRequest.getProfileId(), profileRequest.getProfileLink());
+        profileService.validateProfile(profileRequest);
 
 
 
