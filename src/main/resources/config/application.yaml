@@ -68,19 +68,9 @@ taku:
 
 # AWS Properties
 amazonProperties:
-  endpointUrl: https://s3.us-east-1.amazonaws.com
-  accessKey: AKIAJM7XATHXFSWUNOHQ
-  secretKey: 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
+  endpointUrl: http://taku-images.s3-website-us-east-1.amazonaws.com
+  accessKey: AKIAVX4MEN2AO7B3WPKC
+  secretKey: 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
   bucketName: taku-images
 
-###### Email Properties ######
-#mail:
-#  smtp:
-#    host: smtp.gmail.com
-#    port: 587
-#    username: digisoul.bot@gmail.com
-#    password: goldenblue23!
-#    properties:
-#
-#  verificationapi: http://localhost:8081/verify-email?code=
 

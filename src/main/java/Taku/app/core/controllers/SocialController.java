@@ -2,8 +2,11 @@ package Taku.app.core.controllers;
 
 import Taku.app.core.models.profile.Profile;
 import Taku.app.core.models.users.User;
+import Taku.app.core.payload.request.FollowerRequest;
 import Taku.app.core.payload.request.ProfileRequest;
 import Taku.app.core.payload.request.RequestByEmail;
+import Taku.app.core.payload.response.MessageResponse;
+import Taku.app.core.payload.response.ProfileResponse;
 import Taku.app.core.repositories.ProfileRepository;
 import Taku.app.core.repositories.UserRepository;
 import Taku.app.core.services.images.AmazonClient;
@@ -45,9 +48,14 @@ public class SocialController {
 
         if (userRepository.existsByEmail(requestByEmail.getEmail())){
             User user = userRepository.findByEmailIgnoreCase(requestByEmail.getEmail());
-            profileService.createProfile(user);
-            Profile profile = new Profile(user);
-            profileRepository.save(profile);
+            if (user.getProfile() == null) {
+                profileService.createProfile(user);
+                Profile profile = new Profile(user);
+                profileRepository.save(profile);
+            } else {
+                return ResponseEntity.badRequest().body(new MessageResponse("Error: Profile already exist for this user!"));
+            }
+
         }
 
         
@@ -55,20 +63,41 @@ public class SocialController {
     }
 
     @GetMapping("/retrieveProfile")
-    @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
-    public String getProfile(@Valid @RequestBody ProfileRequest profileRequest) {
-        return null;
+//    @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
+    public ResponseEntity<?> getProfile(@Valid @RequestBody RequestByEmail requestByEmail) {
+
+        if (userRepository.existsByEmail(requestByEmail.getEmail())) {
+            User user = userRepository.findByEmailIgnoreCase(requestByEmail.getEmail());
+            Profile profile = profileRepository.findByUser(user);
+            return ResponseEntity.ok(new ProfileResponse(
+                    user.getId(), user.getFirst_name(), user.getLast_name(),
+                    user.getBusiness_name(), user.getEmail(), user.isVerified(),
+                    profile.getBio(), profile.getOccupation(),
+                    profile.getFollowers() ,profile.getFollowing(), profile.getLink()));
+        }else{
+            return ResponseEntity.badRequest().body(new MessageResponse("Error: User does not exist!"));
+        }
+
+
     }
 
     @PutMapping("/updateProfile")
-    @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
-    public String updateProfile(@Valid @RequestBody ProfileRequest profileRequest){
+//    @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
+    public ResponseEntity<?> updateProfile(@Valid @RequestBody ProfileRequest profileRequest){
 
-        profileService.validateProfile(profileRequest);
+        if (userRepository.existsByEmail(profileRequest.getEmail())) {
+            System.out.println("test: " + profileRequest.getEmail());
+            System.out.println("test 2: " + profileRequest.getBio());
+            System.out.println("test 3: " + profileRequest.getOccupation());
+            System.out.println("test 4: " + profileRequest.getProfileLink());
+            profileService.validateProfile(profileRequest);
+        }else{
+            return ResponseEntity.badRequest().body(new MessageResponse("Error: User does not exist!"));
+        }
 
 
 
-        return null;
+        return ResponseEntity.ok(new MessageResponse("retry email validation link completed successfully!"));
     }
 
     //admin only api
@@ -80,42 +109,47 @@ public class SocialController {
 
 
 
-    //Followers
-    @GetMapping("/getFollower")
+    //Follows
+    @GetMapping("/getFollows")
     @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
-    public String getFollowers(){
+    public ResponseEntity<?> getFollows(@Valid @RequestBody FollowerRequest followerRequest){
+
+        if (userRepository.existsByEmail(followerRequest.getUserEmail()) == true
+        && userRepository.existsByEmail(followerRequest.getFollowerEmail()) == true){
+
+        } else {
+            return ResponseEntity.badRequest().body(new MessageResponse("Error: User does not exist!"));
+        }
 
         return null;
     }
-    @PostMapping("/addFollower")
+    @PostMapping("/addFollows")
     @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
-    public String addFollower(){
+    public ResponseEntity<?> addFollows(@Valid @RequestBody FollowerRequest followerRequest){
 
+        if (userRepository.existsByEmail(followerRequest.getUserEmail()) == true
+                && userRepository.existsByEmail(followerRequest.getFollowerEmail()) == true){
+
+        } else {
+            return ResponseEntity.badRequest().body(new MessageResponse("Error: User does not exist!"));
+        }
         return null;
     }
-    @DeleteMapping("removeFollower")
+    @DeleteMapping("removeFollows")
     @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
-    public String removeFollowers(){
+    public ResponseEntity<?> removeFollows(@Valid @RequestBody FollowerRequest followerRequest){
+
+        if (userRepository.existsByEmail(followerRequest.getUserEmail()) == true
+                && userRepository.existsByEmail(followerRequest.getFollowerEmail()) == true){
+
+        } else {
+            return ResponseEntity.badRequest().body(new MessageResponse("Error: User does not exist!"));
+        }
 
         return null;
     }
 
-    //Following
-    @GetMapping("/getFollowing")
-    public String getFollowing(){
 
-        return null;
-    }
-    @PostMapping("/addFollowing")
-    public String addFollowing(){
-
-        return null;
-    }
-    @DeleteMapping("removeFollowing")
-    public String removeFollowing(){
-
-        return null;
-    }
 
 
     //Pictures
@@ -126,13 +160,13 @@ public class SocialController {
     }
 
     @PostMapping("/uploadPhoto")
-    @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
+    //@PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
     public String uploadPhoto(@RequestPart(value = "file") MultipartFile file){
         return this.amazonClient.uploadFile(file);
     }
 
     @DeleteMapping("/deletePhoto")
-    @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
+    //@PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
     public String deleteFile(@RequestPart(value = "url") String fileUrl) {
         return this.amazonClient.deleteFileFromS3Bucket(fileUrl);
     }

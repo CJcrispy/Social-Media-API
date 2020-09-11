@@ -51,7 +51,9 @@ public class Profile {
     }
 
     //for retrieving profile data
-
+    public Profile(){
+        super();
+    }
 
     public Long getProfile_id() {
         return profileId;

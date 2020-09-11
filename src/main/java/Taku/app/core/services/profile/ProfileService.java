@@ -34,29 +34,26 @@ public class ProfileService {
 
     public ResponseEntity<?> validateProfile(ProfileRequest profile){
 
-       if (userRepository.exisitsById(profile.getUserId()) == true) {
-           Optional<User> user = userRepository.findById(profile.getUserId());
-           System.out.println("test: " + user.get().getEmail());
-//           updateProfile(user, profile);
+       if (userRepository.existsByEmail(profile.getEmail()) == true) {
+           User user = userRepository.findByEmailIgnoreCase(profile.getEmail());
+           updateProfile(user, profile);
+           return ResponseEntity.ok("You have successfully updated your profile.");
        } else {
            return ResponseEntity
                    .badRequest()
-                   .body(new MessageResponse("Error: Email is already in use!"));
+                   .body(new MessageResponse("Error: User does not exist"));
        }
 
-        return ResponseEntity.ok(new MessageResponse("User validated successfully!"));
     }
 
-    public ResponseEntity<String> updateProfile(User user, ProfileRequest profile){
+    public void updateProfile(User user, ProfileRequest profile){
 
-        List<Profile> profileList = profileRepository.findByUser(user);
-        Profile profilez = profileList.get(0);
-        profilez.setBio(profile.getBio());
-        profilez.setOccupation(profile.getOccupation());
-        profilez.setLink(profile.getProfileLink());
-        profileRepository.save(profilez);
+        Profile profileList = profileRepository.findByUser(user);
+        profileList.setBio(profile.getBio());
+        profileList.setOccupation(profile.getOccupation());
+        profileList.setLink(profile.getProfileLink());
+        profileRepository.save(profileList);
 
-        return ResponseEntity.ok("You have successfully updated your profile.");
     }
 
 }

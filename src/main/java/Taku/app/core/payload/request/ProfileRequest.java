@@ -8,8 +8,9 @@ import java.util.HashMap;
 
 public class ProfileRequest {
 
+
     @NotBlank
-    private Long UserId;
+    private String email;
 
     @NotBlank
     private String bio;
@@ -20,12 +21,12 @@ public class ProfileRequest {
     @NotBlank
     private String profileLink;
 
-    public Long getUserId() {
-        return UserId;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUserId(Long userId) {
-        UserId = userId;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getBio() {
