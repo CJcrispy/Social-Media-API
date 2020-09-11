@@ -117,6 +117,7 @@ public class SocialController {
         if (userRepository.existsByEmail(followerRequest.getUserEmail()) == true
         && userRepository.existsByEmail(followerRequest.getFollowerEmail()) == true){
 
+            User user = userRepository.findByEmailIgnoreCase(followerRequest.getUserEmail());
         } else {
             return ResponseEntity.badRequest().body(new MessageResponse("Error: User does not exist!"));
         }
@@ -130,6 +131,7 @@ public class SocialController {
         if (userRepository.existsByEmail(followerRequest.getUserEmail()) == true
                 && userRepository.existsByEmail(followerRequest.getFollowerEmail()) == true){
 
+            User user = userRepository.findByEmailIgnoreCase(followerRequest.getUserEmail());
         } else {
             return ResponseEntity.badRequest().body(new MessageResponse("Error: User does not exist!"));
         }
@@ -142,6 +144,7 @@ public class SocialController {
         if (userRepository.existsByEmail(followerRequest.getUserEmail()) == true
                 && userRepository.existsByEmail(followerRequest.getFollowerEmail()) == true){
 
+            User user = userRepository.findByEmailIgnoreCase(followerRequest.getUserEmail());
         } else {
             return ResponseEntity.badRequest().body(new MessageResponse("Error: User does not exist!"));
         }
