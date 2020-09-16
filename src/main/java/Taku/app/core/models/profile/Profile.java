@@ -3,6 +3,7 @@ package Taku.app.core.models.profile;
 import Taku.app.core.models.users.User;
 import javax.persistence.*;
 import javax.validation.constraints.*;
+import java.io.*;
 import java.util.*;
 
 import javax.persistence.Entity;
@@ -26,10 +27,10 @@ public class Profile {
     private String occupation;
 
     @Column(nullable = false)
-    private HashMap<Integer, User> followers;
+    private HashMap<User,Integer > followers;
 
     @Column(nullable = false)
-    private HashMap<Integer, User> following;
+    private HashMap<User, Integer> following;
 
     @Column(nullable = false)
     private String link;
@@ -40,14 +41,13 @@ public class Profile {
     private User user;
 
     //for profile creation
-    public Profile(User user){
+    public Profile(User user) {
         this.user = user;
         this.bio = null;
         this.occupation = null;
-        this.followers = new HashMap<>();
-        this.following = new HashMap<>();
+        this.followers = new HashMap<User, Integer>();
+        this.following = new HashMap<User, Integer>();
         this.link = UUID.randomUUID().toString();
-
     }
 
     //for retrieving profile data
@@ -79,19 +79,19 @@ public class Profile {
         this.occupation = occupation;
     }
 
-    public HashMap<Integer, User> getFollowers() {
+    public HashMap<User, Integer> getFollowers() {
         return followers;
     }
 
-    public void setFollowers(HashMap<Integer, User> followers) {
+    public void setFollowers(HashMap<User, Integer> followers) {
         this.followers = followers;
     }
 
-    public HashMap<Integer, User> getFollowing() {
+    public HashMap<User, Integer> getFollowing() {
         return following;
     }
 
-    public void setFollowing(HashMap<Integer, User> following) {
+    public void setFollowing(HashMap<User,Integer> following) {
         this.following = following;
     }
 

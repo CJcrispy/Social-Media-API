@@ -26,7 +26,7 @@ public class ProfileResponse {
     public ProfileResponse(Long id, String first_name,
                            String last_name, String business_name, String email, boolean verified,
                            String bio, String occupation,
-                           HashMap<Integer, User> followers, HashMap<Integer, User> following,
+                           HashMap<User, Integer> followers, HashMap<User, Integer> following,
                            String link) {
         this.id = id;
         this.first_name = first_name;

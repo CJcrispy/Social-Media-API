@@ -10,6 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
@@ -23,7 +27,19 @@ public class ProfileService {
     @Autowired
     UserRepository userRepository;
 
-    public ResponseEntity<String> createProfile(User user){
+    public boolean validateProfile(User user){
+
+        boolean profile;
+        if (profileRepository.findByUser(user) == null){
+            profile = false;
+        } else {
+            profile = true;
+        }
+
+        return profile;
+    }
+
+    public ResponseEntity<String> createProfile(User user)  {
 
         Profile profile = new Profile(user);
         profileRepository.save(profile);

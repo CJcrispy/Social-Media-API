@@ -5,6 +5,7 @@ import Taku.app.core.models.users.User;
 import Taku.app.core.payload.request.FollowerRequest;
 import Taku.app.core.payload.request.ProfileRequest;
 import Taku.app.core.payload.request.RequestByEmail;
+import Taku.app.core.payload.response.FollowerResponse;
 import Taku.app.core.payload.response.MessageResponse;
 import Taku.app.core.payload.response.ProfileResponse;
 import Taku.app.core.repositories.ProfileRepository;
@@ -18,6 +19,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+import java.util.HashMap;
 import java.util.List;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -43,25 +47,6 @@ public class SocialController {
     UserRepository userRepository;
 
     //Profile
-    @PostMapping("/createProfile")
-    public ResponseEntity<?> createProfile(@Valid @RequestBody RequestByEmail requestByEmail){
-
-        if (userRepository.existsByEmail(requestByEmail.getEmail())){
-            User user = userRepository.findByEmailIgnoreCase(requestByEmail.getEmail());
-            if (user.getProfile() == null) {
-                profileService.createProfile(user);
-                Profile profile = new Profile(user);
-                profileRepository.save(profile);
-            } else {
-                return ResponseEntity.badRequest().body(new MessageResponse("Error: Profile already exist for this user!"));
-            }
-
-        }
-
-        
-        return null;
-    }
-
     @GetMapping("/retrieveProfile")
 //    @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
     public ResponseEntity<?> getProfile(@Valid @RequestBody RequestByEmail requestByEmail) {
@@ -69,11 +54,12 @@ public class SocialController {
         if (userRepository.existsByEmail(requestByEmail.getEmail())) {
             User user = userRepository.findByEmailIgnoreCase(requestByEmail.getEmail());
             Profile profile = profileRepository.findByUser(user);
+
             return ResponseEntity.ok(new ProfileResponse(
                     user.getId(), user.getFirst_name(), user.getLast_name(),
                     user.getBusiness_name(), user.getEmail(), user.isVerified(),
                     profile.getBio(), profile.getOccupation(),
-                    profile.getFollowers() ,profile.getFollowing(), profile.getLink()));
+                    profile.getFollowers(), profile.getFollowing(), profile.getLink()));
         }else{
             return ResponseEntity.badRequest().body(new MessageResponse("Error: User does not exist!"));
         }
@@ -111,32 +97,61 @@ public class SocialController {
 
     //Follows
     @GetMapping("/getFollows")
-    @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
-    public ResponseEntity<?> getFollows(@Valid @RequestBody FollowerRequest followerRequest){
+    //@PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
+    public ResponseEntity<?> getFollows(@Valid @RequestBody RequestByEmail requestByEmail){
 
-        if (userRepository.existsByEmail(followerRequest.getUserEmail()) == true
-        && userRepository.existsByEmail(followerRequest.getFollowerEmail()) == true){
+        if (userRepository.existsByEmail(requestByEmail.getEmail()) == true){
 
-            User user = userRepository.findByEmailIgnoreCase(followerRequest.getUserEmail());
+            User user = userRepository.findByEmailIgnoreCase(requestByEmail.getEmail());
+            Profile profile = profileRepository.findByUser(user);
+            return ResponseEntity.ok(new FollowerResponse(
+                    profile.getFollowers() ,profile.getFollowing()));
         } else {
             return ResponseEntity.badRequest().body(new MessageResponse("Error: User does not exist!"));
         }
 
-        return null;
     }
+
     @PostMapping("/addFollows")
-    @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
+    //@PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
     public ResponseEntity<?> addFollows(@Valid @RequestBody FollowerRequest followerRequest){
 
         if (userRepository.existsByEmail(followerRequest.getUserEmail()) == true
                 && userRepository.existsByEmail(followerRequest.getFollowerEmail()) == true){
 
+            //user 1
             User user = userRepository.findByEmailIgnoreCase(followerRequest.getUserEmail());
+
+            //user 2 (Person user 1 is attempting to follow)
+            User user2 = userRepository.findByEmailIgnoreCase(followerRequest.getFollowerEmail());
+
+
+            FileInputStream fis = new FileInputStream("hashmap.ser");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            Profile profile = new Profile(user);
+
+            map = (HashMap) ois.readObject();
+            ois.close();
+            fis.close();
+            //adding user2 to user1 following list
+            HashMap<User, Integer> UserFollowing = user.getProfile().getFollowing();
+            UserFollowing.put(user2, user.getProfile().getFollowing().size() + 1);
+            user.getProfile().setFollowing(UserFollowing);
+            userRepository.save(user);
+
+            //adding user1 to user2 follower list
+            HashMap<User, Integer> UserFollower = user2.getProfile().getFollowers();
+            UserFollower.put(user, user2.getProfile().getFollowers().size() + 1);
+            user2.getProfile().setFollowers(UserFollower);
+            userRepository.save(user2);
+
+            return ResponseEntity.ok(new MessageResponse("User successfully followed target user!"));
+
         } else {
             return ResponseEntity.badRequest().body(new MessageResponse("Error: User does not exist!"));
         }
-        return null;
     }
+
     @DeleteMapping("removeFollows")
     @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
     public ResponseEntity<?> removeFollows(@Valid @RequestBody FollowerRequest followerRequest){
@@ -145,6 +160,8 @@ public class SocialController {
                 && userRepository.existsByEmail(followerRequest.getFollowerEmail()) == true){
 
             User user = userRepository.findByEmailIgnoreCase(followerRequest.getUserEmail());
+            Profile profile = profileRepository.findByUser(user);
+
         } else {
             return ResponseEntity.badRequest().body(new MessageResponse("Error: User does not exist!"));
         }

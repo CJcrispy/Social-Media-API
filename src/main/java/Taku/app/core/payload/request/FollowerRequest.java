@@ -5,24 +5,24 @@ import javax.validation.constraints.NotBlank;
 public class FollowerRequest {
 
     @NotBlank
-    private String UserEmail;
+    private String userEmail;
 
     @NotBlank
-    private String FollowerEmail;
+    private String followerEmail;
 
     public String getUserEmail() {
-        return UserEmail;
+        return userEmail;
     }
 
     public void setUserEmail(String userEmail) {
-        UserEmail = userEmail;
+        this.userEmail = userEmail;
     }
 
     public String getFollowerEmail() {
-        return FollowerEmail;
+        return followerEmail;
     }
 
     public void setFollowerEmail(String followerEmail) {
-        FollowerEmail = followerEmail;
+        this.followerEmail = followerEmail;
     }
 }

@@ -216,9 +216,9 @@ public class AuthenticationController {
 
 
     @PostMapping("/verify-email")
-    public String verifyEmail(String code) {
-        System.out.println("token: " + code);
-        return verificationTokenService.verifyEmail(code).getBody();
+    public String verifyEmail(@Valid @RequestBody CodeVerificationRequest codeVerificationRequest) {
+
+        return verificationTokenService.verifyEmail(codeVerificationRequest.getToken()).getBody();
     }
 
     @PostMapping("/retry-validation")
