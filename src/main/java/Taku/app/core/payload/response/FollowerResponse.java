@@ -7,29 +7,29 @@ import java.util.HashMap;
 
 public class FollowerResponse {
 
-    private int followers;
+    private long followers;
 
 
-    private int following;
+    private long following;
 
-    public FollowerResponse(HashMap followers, HashMap following){
-        this.followers = followers.size();
-        this.following = following.size();
+    public FollowerResponse(long followers, long following){
+        this.followers = followers;
+        this.following = following;
     }
 
-    public int getFollowers() {
+    public long getFollowers() {
         return followers;
     }
 
-    public void setFollowers(int followers) {
+    public void setFollowers(long followers) {
         this.followers = followers;
     }
 
-    public int getFollowing() {
+    public long getFollowing() {
         return following;
     }
 
-    public void setFollowing(int following) {
+    public void setFollowing(long following) {
         this.following = following;
     }
 }

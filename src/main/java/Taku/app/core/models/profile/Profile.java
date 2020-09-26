@@ -1,9 +1,8 @@
 package Taku.app.core.models.profile;
 
+import Taku.app.core.models.users.Roles;
 import Taku.app.core.models.users.User;
 import javax.persistence.*;
-import javax.validation.constraints.*;
-import java.io.*;
 import java.util.*;
 
 import javax.persistence.Entity;
@@ -27,10 +26,10 @@ public class Profile {
     private String occupation;
 
     @Column(nullable = false)
-    private HashMap<User,Integer > followers;
+    private long followers;
 
     @Column(nullable = false)
-    private HashMap<User, Integer> following;
+    private long following;
 
     @Column(nullable = false)
     private String link;
@@ -45,8 +44,6 @@ public class Profile {
         this.user = user;
         this.bio = null;
         this.occupation = null;
-        this.followers = new HashMap<User, Integer>();
-        this.following = new HashMap<User, Integer>();
         this.link = UUID.randomUUID().toString();
     }
 
@@ -79,19 +76,19 @@ public class Profile {
         this.occupation = occupation;
     }
 
-    public HashMap<User, Integer> getFollowers() {
+    public long getFollowers() {
         return followers;
     }
 
-    public void setFollowers(HashMap<User, Integer> followers) {
+    public void setFollowers(long followers) {
         this.followers = followers;
     }
 
-    public HashMap<User, Integer> getFollowing() {
+    public long getFollowing() {
         return following;
     }
 
-    public void setFollowing(HashMap<User,Integer> following) {
+    public void setFollowing(long following) {
         this.following = following;
     }
 

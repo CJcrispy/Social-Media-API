@@ -1,6 +1,7 @@
 package Taku.app.core.models.users;
 
 import Taku.app.core.models.email_verification.VerificationToken;
+import Taku.app.core.models.profile.Network;
 import Taku.app.core.models.profile.Profile;
 
 import javax.persistence.*;
@@ -149,5 +150,6 @@ public class User {
         public void setProfile(Profile profile){
                 this.profile = profile;
         }
+
 
 }

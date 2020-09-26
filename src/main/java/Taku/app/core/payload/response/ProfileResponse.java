@@ -19,26 +19,25 @@ public class ProfileResponse {
     private Profile profile;
     private String bio;
     private String occupation;
-    private int followers;
-    private int following;
+    private long followers;
+    private long following;
     private String link;
 
     public ProfileResponse(Long id, String first_name,
                            String last_name, String business_name, String email, boolean verified,
                            String bio, String occupation,
-                           HashMap<User, Integer> followers, HashMap<User, Integer> following,
+                           long followers, long following,
                            String link) {
         this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;
         this.business_name = business_name;
         this.email = email;
-//        this.roles = roles;
         this.isVerified = verified;
         this.bio = bio;
         this.occupation = occupation;
-        this.followers = followers.size();
-        this.following = following.size();
+        this.followers = followers;
+        this.following = following;
         this.link = link;
     }
 
@@ -120,19 +119,19 @@ public class ProfileResponse {
         this.occupation = occupation;
     }
 
-    public int getFollowers() {
+    public long getFollowers() {
         return followers;
     }
 
-    public void setFollowers(int followers) {
+    public void setFollowers(long followers) {
         this.followers = followers;
     }
 
-    public int getFollowing() {
+    public long getFollowing() {
         return following;
     }
 
-    public void setFollowing(int following) {
+    public void setFollowing(long following) {
         this.following = following;
     }
 
