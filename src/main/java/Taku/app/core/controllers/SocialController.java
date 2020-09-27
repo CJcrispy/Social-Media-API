@@ -168,7 +168,6 @@ public class SocialController {
     }
 
 
-
     //Pictures
     @PostMapping("/uploadProfilePic")
     @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
