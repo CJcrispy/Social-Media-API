@@ -8,7 +8,6 @@ import java.awt.*;
 @Service
 public class ImageService {
 
-
     public boolean isImage(String image_path){
         Image image = new ImageIcon(image_path).getImage();
         if(image.getWidth(null) == -1){

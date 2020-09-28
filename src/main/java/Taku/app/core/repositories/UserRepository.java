@@ -24,4 +24,12 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Query (value = "SELECT * FROM users u OFFSET floor(random()*:n) LIMIT 1",
             nativeQuery = true)
     List<User> grabRandomTableRows(@Param("n") long n);
+
+    @Query (value = "select * from users where id = all (select user_id from user_roles where role_id = 2)",
+            nativeQuery = true)
+    List<User> grabRandomBusinessTableRows(@Param("n") long n);
+
+    @Query (value = "select * from users where id = all (select user_id from user_roles where role_id = 1)",
+            nativeQuery = true)
+    List<User> grabRandomMemberTableRows(@Param("n") long n);
 }

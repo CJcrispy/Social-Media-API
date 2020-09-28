@@ -24,11 +24,15 @@ public class SearchController{
     @GetMapping("/business/profile")
     public ResponseEntity<?> discoverBusiness(){
 
+        socialService.test_business();
+
         return null;
     }
 
     @GetMapping("/member/profile")
     public ResponseEntity<?> discoverMember(){
+
+        socialService.test_member();
 
         return null;
     }
