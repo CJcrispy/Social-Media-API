@@ -23,6 +23,11 @@ public class User {
         @NotBlank
         @Size(max = 20)
         @Column(nullable = false)
+        private String username;
+
+        @NotBlank
+        @Size(max = 30)
+        @Column(nullable = false)
         private String first_name;
 
         @NotBlank
@@ -61,8 +66,9 @@ public class User {
         public User() {
         }
 
-        public User(String first_name, String last_name, String business_name,
+        public User(String username, String first_name, String last_name, String business_name,
                     String email, String password) {
+                this.username = username;
                 this.first_name = first_name;
                 this.last_name = last_name;
                 this.business_name = business_name;
@@ -77,6 +83,14 @@ public class User {
 
         public void setId(Long id) {
                 this.id = id;
+        }
+
+        public String getUsername() {
+                return username;
+        }
+
+        public void setUsername(String username) {
+                this.username = username;
         }
 
         public String getFirst_name() {

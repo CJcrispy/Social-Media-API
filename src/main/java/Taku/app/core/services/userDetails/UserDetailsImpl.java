@@ -19,6 +19,8 @@ public class UserDetailsImpl implements UserDetails {
 
     private Long id;
 
+    private String username;
+
     private String first_name;
 
     private String last_name;
@@ -31,23 +33,41 @@ public class UserDetailsImpl implements UserDetails {
 
     private Profile profile;
 
+    private String bio;
+
+    private String occupation;
+
+    private String link;
+
+    private long followers;
+
+    private long following;
+
+    private User user;
+
     @JsonIgnore
     private String password;
 
     private Collection<? extends GrantedAuthority> authorities;
 
-    public UserDetailsImpl(Long id, String first_name,
+    public UserDetailsImpl(Long id, String username, String first_name,
                            String last_name, String business_name, String email, String password,
-                           boolean isVerified, Profile profile,
+                           boolean isVerified, String bio, String occupation, String link,
+                           long followers, long following,
                            Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
+        this.username = username;
         this.first_name = first_name;
         this.last_name = last_name;
         this.business_name = business_name;
         this.email = email;
         this.password = password;
         this.isVerified = isVerified;
-        this.profile = profile;
+        this.bio = bio;
+        this.occupation = occupation;
+        this.link = link;
+        this.followers = followers;
+        this.following = following;
         this.authorities = authorities;
     }
 
@@ -58,13 +78,18 @@ public class UserDetailsImpl implements UserDetails {
 
         return new UserDetailsImpl(
                 user.getId(),
+                user.getUsername(),
                 user.getFirst_name(),
                 user.getLast_name(),
                 user.getBusiness_name(),
                 user.getEmail(),
                 user.getPassword(),
                 user.isVerified(),
-                user.getProfile(),
+                user.getProfile().getBio(),
+                user.getProfile().getOccupation(),
+                user.getProfile().getLink(),
+                user.getProfile().getFollowers(),
+                user.getProfile().getFollowing(),
                 authorities);
     }
 
@@ -139,6 +164,29 @@ public class UserDetailsImpl implements UserDetails {
         this.profile = profile;
     }
 
+    public String getBio() {
+        return bio;
+    }
+
+    public String getOccupation() {
+        return occupation;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public long getFollowers() {
+        return followers;
+    }
+
+    public long getFollowing() {
+        return following;
+    }
+
+    public User getUser() {
+        return user;
+    }
 
     @Override
     public boolean equals(Object o) {

@@ -1,26 +1,40 @@
 package Taku.app.core.services.feed;
 
+import Taku.app.core.exception.PostNotFoundException;
 import Taku.app.core.models.feed.Post;
 import Taku.app.core.payload.request.PostRequest;
 import Taku.app.core.repositories.PostRepository;
+import Taku.app.core.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.Instant;
+import java.util.Collections;
 import java.util.List;
+
+import static java.util.stream.Collectors.toList;
 
 @Service
 public class PostService {
 
     @Autowired
-    private AuthService authService;
+    private PostRepository postRepository;
 
     @Autowired
-    private PostRepository postRepository;
+    private UserRepository userRepository;
 
     @Transactional
     public List<PostRequest> showAllPosts() {
         List<Post> posts = postRepository.findAll();
+        return posts.stream().map(this::mapFromPostToDto).collect(toList());
+    }
+
+    @Transactional
+    public List<PostRequest> showAllUserPosts(String username) {
+//        username = '\'' + username + '\'';
+//        System.out.println(username);
+        List<Post> posts = postRepository.findAllByUsername(username);
         return posts.stream().map(this::mapFromPostToDto).collect(toList());
     }
 
@@ -49,9 +63,9 @@ public class PostService {
         Post post = new Post();
         post.setTitle(postRequest.getTitle());
         post.setContent(postRequest.getContent());
-        User loggedInUser = authService.getCurrentUser().orElseThrow(() -> new IllegalArgumentException("User Not Found"));
         post.setCreatedOn(Instant.now());
-        post.setUsername(loggedInUser.getUsername());
+        post.setUsername(postRequest.getUsername());
+        post.setUser(userRepository.findByUsername(postRequest.getUsername()));
         post.setUpdatedOn(Instant.now());
         return post;
     }

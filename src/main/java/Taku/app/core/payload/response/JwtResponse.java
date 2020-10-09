@@ -14,12 +14,17 @@ public class JwtResponse {
     private String email;
     private List<String> roles;
     private boolean isVerified;
-    private Profile profile;
+    private String bio;
+    private String occupation;
+    private String link;
+    private long followers;
+    private long following;
+
 
     public JwtResponse(String accessToken, Long id, String first_name,
                        String last_name, String business_name, String email, boolean verified,
-                       Profile profile,
-                       List<String> roles) {
+                       String bio, String occupation, String link,
+                       long followers, long following, List<String> roles) {
         this.token = accessToken;
         this.id = id;
         this.first_name = first_name;
@@ -28,9 +33,12 @@ public class JwtResponse {
         this.email = email;
         this.roles = roles;
         this.isVerified = verified;
-        this.profile = profile;
+        this.bio = bio;
+        this.occupation = occupation;
+        this.link = link;
+        this.followers = followers;
+        this.following = following;
     }
-
 
     public String getAccessToken() {
         return token;
@@ -101,13 +109,43 @@ public class JwtResponse {
         isVerified = verified;
     }
 
-    public Profile getProfile(){
-        return profile;
+    public String getBio() {
+        return bio;
     }
 
-    public void setProfile(Profile profile){
-        this.profile = profile;
+    public void setBio(String bio) {
+        this.bio = bio;
     }
 
+    public String getOccupation() {
+        return occupation;
+    }
 
+    public void setOccupation(String occupation) {
+        this.occupation = occupation;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public long getFollowers() {
+        return followers;
+    }
+
+    public void setFollowers(long followers) {
+        this.followers = followers;
+    }
+
+    public long getFollowing() {
+        return following;
+    }
+
+    public void setFollowing(long following) {
+        this.following = following;
+    }
 }

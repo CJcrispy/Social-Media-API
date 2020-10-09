@@ -8,6 +8,10 @@ public class RegisterRequest {
 
     @NotBlank
     @Size(min = 2, max = 40)
+    private String username;
+
+    @NotBlank
+    @Size(min = 2, max = 40)
     private String first_name;
 
     @NotBlank
@@ -26,6 +30,14 @@ public class RegisterRequest {
     @NotBlank
     @Size(min = 6, max = 40)
     private String password;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public String getFirst_name() {
         return first_name;

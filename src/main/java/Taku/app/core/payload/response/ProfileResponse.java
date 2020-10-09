@@ -10,6 +10,7 @@ import java.util.Set;
 public class ProfileResponse {
 
     private Long id;
+    private String username;
     private String first_name;
     private String last_name;
     private String business_name;
@@ -23,12 +24,13 @@ public class ProfileResponse {
     private long following;
     private String link;
 
-    public ProfileResponse(Long id, String first_name,
+    public ProfileResponse(Long id, String username, String first_name,
                            String last_name, String business_name, String email, boolean verified,
                            String bio, String occupation,
                            long followers, long following,
                            String link) {
         this.id = id;
+        this.username = username;
         this.first_name = first_name;
         this.last_name = last_name;
         this.business_name = business_name;
@@ -48,6 +50,14 @@ public class ProfileResponse {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getFirst_name() {

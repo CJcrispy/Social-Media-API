@@ -82,7 +82,11 @@ public class AuthenticationController {
                 userDetails.getBusiness_name(),
                 userDetails.getEmail(),
                 userDetails.isVerified(),
-                userDetails.getProfile(),
+                userDetails.getBio(),
+                userDetails.getOccupation(),
+                userDetails.getLink(),
+                userDetails.getFollowers(),
+                userDetails.getFollowing(),
                 roles));
     }
 
@@ -96,7 +100,7 @@ public class AuthenticationController {
         }
 
         // Create new user's account and logs info into database
-        User user = new User(signUpRequest.getFirst_name(), signUpRequest.getLast_name(),
+        User user = new User(signUpRequest.getUsername(), signUpRequest.getFirst_name(), signUpRequest.getLast_name(),
                 signUpRequest.getBusiness_name(), signUpRequest.getEmail(),
                 encoder.encode(signUpRequest.getPassword()));
 
@@ -160,7 +164,7 @@ public class AuthenticationController {
         }
 
         // Create new user's account and logs info into database
-        User user = new User(signUpRequest.getFirst_name(), signUpRequest.getLast_name(),
+        User user = new User(signUpRequest.getUsername(), signUpRequest.getFirst_name(), signUpRequest.getLast_name(),
                 signUpRequest.getBusiness_name(), signUpRequest.getEmail(),
                 encoder.encode(signUpRequest.getPassword()));
 

@@ -1,10 +1,18 @@
 package Taku.app.core.payload.request;
 
+import javax.validation.constraints.NotBlank;
+
 public class PostRequest {
 
     private Long id;
+
+    @NotBlank
     private String content;
+
+    @NotBlank
     private String title;
+
+    @NotBlank
     private String username;
 
     public Long getId() {

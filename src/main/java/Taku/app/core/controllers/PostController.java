@@ -17,7 +17,7 @@ public class PostController {
     @Autowired
     private PostService postService;
 
-    @PostMapping("/post")
+    @PostMapping()
     public ResponseEntity<?> createPost(@RequestBody PostRequest postRequest) {
         postService.createPost(postRequest);
         return new ResponseEntity(HttpStatus.OK);
@@ -26,6 +26,11 @@ public class PostController {
     @GetMapping("/all")
     public ResponseEntity<List<PostRequest>> showAllPosts() {
         return new ResponseEntity<>(postService.showAllPosts(), HttpStatus.OK);
+    }
+
+    @GetMapping("/all/username={username}")
+    public ResponseEntity<List<PostRequest>> showAllUserPosts(@PathVariable @RequestBody String username) {
+        return new ResponseEntity<>(postService.showAllUserPosts(username), HttpStatus.OK);
     }
 
     @GetMapping("/get/{id}")

@@ -8,13 +8,17 @@ import java.util.Date;
 import java.time.Instant;
 
 @Entity
-@Table(name = "post")
+@Table(name = "posts")
 public class Post {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, name="post_id")
     private Long id;
+
+    @NotBlank
+    @Column
+    private String username;
 
     @NotBlank
     @Column
@@ -31,9 +35,7 @@ public class Post {
     @Column
     private Instant updatedOn;
 
-    @Column
-    @NotBlank
-    @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER,
+    @ManyToOne(targetEntity = User.class, fetch = FetchType.EAGER,
             cascade = CascadeType.DETACH)
     @JoinColumn(nullable = false, name = "user_id")
     private User user;
@@ -44,6 +46,14 @@ public class Post {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getTitle() {
