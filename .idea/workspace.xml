@@ -2,36 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9d3ac59-355a-4a29-9453-a0ced116c11c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/exception/PostNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/controllers/MessageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/repositories/MessageRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/feed/MessageService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/controllers/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/controllers/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/controllers/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/controllers/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/feed/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/feed/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/profile/Images.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/profile/Images.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/users/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/payload/request/PostRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/payload/request/PostRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/payload/request/RegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/payload/request/RegisterRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/payload/response/JwtResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/payload/response/JwtResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/payload/response/ProfileResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/payload/response/ProfileResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/repositories/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/repositories/PostRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/repositories/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/feed/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/feed/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/userDetails/UserDetailsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/userDetails/UserDetailsImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/userDetails/UserDetailsService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/config/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/controllers/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/controllers/AuthenticationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/models/profile/Images.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/models/profile/Images.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/models/users/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/models/users/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/payload/request/RegisterRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/payload/request/RegisterRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/payload/response/JwtResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/payload/response/JwtResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/payload/response/ProfileResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/payload/response/ProfileResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/repositories/ImageRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/repositories/ImageRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/repositories/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/services/images/ImageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/services/images/ImageService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/services/userDetails/UserDetailsImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/services/userDetails/UserDetailsImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/services/userDetails/UserDetailsService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/config/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/services/feed/PostService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/services/feed/PostService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,9 +18,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -171,25 +147,25 @@
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
     <state x="2659" y="265" key="FileChooserDialogImpl/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1601338300357" />
-    <state width="1877" height="315" key="GridCell.Tab.0.bottom" timestamp="1602221380303">
+    <state width="1877" height="315" key="GridCell.Tab.0.bottom" timestamp="1602261865560">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="315" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1602221380303" />
+    <state width="1877" height="315" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1602261865560" />
     <state width="1877" height="365" key="GridCell.Tab.0.bottom/0.0.1920.999/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596835068759" />
-    <state width="1877" height="315" key="GridCell.Tab.0.center" timestamp="1602221380303">
+    <state width="1877" height="315" key="GridCell.Tab.0.center" timestamp="1602261865560">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="315" key="GridCell.Tab.0.center/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1602221380303" />
+    <state width="1877" height="315" key="GridCell.Tab.0.center/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1602261865560" />
     <state width="1877" height="365" key="GridCell.Tab.0.center/0.0.1920.999/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596835068758" />
-    <state width="1877" height="315" key="GridCell.Tab.0.left" timestamp="1602221380303">
+    <state width="1877" height="315" key="GridCell.Tab.0.left" timestamp="1602261865560">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="315" key="GridCell.Tab.0.left/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1602221380303" />
+    <state width="1877" height="315" key="GridCell.Tab.0.left/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1602261865560" />
     <state width="1877" height="365" key="GridCell.Tab.0.left/0.0.1920.999/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596835068758" />
-    <state width="1877" height="315" key="GridCell.Tab.0.right" timestamp="1602221380303">
+    <state width="1877" height="315" key="GridCell.Tab.0.right" timestamp="1602261865560">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="315" key="GridCell.Tab.0.right/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1602221380303" />
+    <state width="1877" height="315" key="GridCell.Tab.0.right/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1602261865560" />
     <state width="1877" height="365" key="GridCell.Tab.0.right/0.0.1920.999/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596835068759" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1598028576744">
       <screen x="1920" y="5" width="1920" height="1040" />

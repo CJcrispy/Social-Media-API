@@ -32,8 +32,6 @@ public class PostService {
 
     @Transactional
     public List<PostRequest> showAllUserPosts(String username) {
-//        username = '\'' + username + '\'';
-//        System.out.println(username);
         List<Post> posts = postRepository.findAllByUsername(username);
         return posts.stream().map(this::mapFromPostToDto).collect(toList());
     }
