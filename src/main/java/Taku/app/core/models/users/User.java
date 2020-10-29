@@ -1,12 +1,14 @@
 package Taku.app.core.models.users;
 
 import Taku.app.core.models.email_verification.VerificationToken;
+import Taku.app.core.models.feed.Messages;
 import Taku.app.core.models.profile.Network;
 import Taku.app.core.models.profile.Profile;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -49,7 +51,7 @@ public class User {
         @Column(nullable = false)
         private String password;
 
-        @ManyToMany(fetch = FetchType.LAZY)
+        @ManyToMany(fetch = FetchType.EAGER)
         @JoinTable(	name = "user_roles",
                 joinColumns = @JoinColumn(name = "user_id"),
                 inverseJoinColumns = @JoinColumn(name = "role_id"))
@@ -57,10 +59,7 @@ public class User {
 
         private boolean isVerified;
 
-        @OneToOne(mappedBy = "user", orphanRemoval=true, cascade = CascadeType.DETACH)
-        private VerificationToken verificationToken;
-
-        @OneToOne(mappedBy = "user", orphanRemoval=true, cascade = CascadeType.DETACH)
+        @OneToOne(fetch = FetchType.LAZY, mappedBy = "user", orphanRemoval=true, cascade = CascadeType.DETACH)
         private Profile profile;
 
         public User() {
@@ -149,14 +148,6 @@ public class User {
                 this.isVerified = isVerified;
         }
 
-        public VerificationToken getVerificationToken() {
-                return verificationToken;
-        }
-
-        public void setVerificationToken(VerificationToken verificationToken) {
-                this.verificationToken = verificationToken;
-        }
-
         public Profile getProfile(){
                 return profile;
         }
@@ -164,6 +155,5 @@ public class User {
         public void setProfile(Profile profile){
                 this.profile = profile;
         }
-
 
 }

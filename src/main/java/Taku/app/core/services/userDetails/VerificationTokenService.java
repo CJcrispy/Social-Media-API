@@ -39,8 +39,10 @@ public class VerificationTokenService {
 
         verificationToken.setConfirmedDate(new Date(System.currentTimeMillis()));
         verificationToken.setStatus(VerificationToken.STATUS_VERIFIED);
-        verificationToken.getUser().setVerified(true);
-        userRepository.save(verificationToken.getUser());
+        Optional<User> person = userRepository.findById(verificationToken.getUser().getId());
+        User user = person.get();
+        user.setVerified(true);
+        userRepository.save(user);
         verificationTokenRepository.save(verificationToken);
 
         return ResponseEntity.ok("You have successfully verified your email address.");

@@ -2,12 +2,63 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9d3ac59-355a-4a29-9453-a0ced116c11c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/controllers/MessageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/repositories/MessageRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/feed/MessageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/feed/Messages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/feed/Total_messages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/payload/request/MessageRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/payload/request/PasswordResetRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/payload/request/RequestByUsername.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/payload/response/ConversationResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/payload/response/DiscoveryPageResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/repositories/ConversationRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/feed/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/feed/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/services/feed/PostService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/services/feed/PostService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/controllers/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/controllers/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/controllers/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/controllers/MessageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/controllers/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/controllers/SearchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/controllers/SocialController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/controllers/SocialController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/email_verification/VerificationToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/email_verification/VerificationToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/feed/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/feed/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/profile/ERelationships.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/profile/Images.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/profile/Images.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/profile/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/profile/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/models/users/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/payload/response/MessageResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/payload/response/MessageResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/repositories/ImageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/repositories/ImageRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/repositories/MessageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/repositories/MessageRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/repositories/ProfileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/repositories/ProfileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/repositories/VerificationTokenRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/repositories/VerificationTokenRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/feed/MessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/feed/MessageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/images/AmazonClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/images/AmazonClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/profile/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/profile/ProfileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/profile/SocialService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/profile/SocialService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/userDetails/EmailSenderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/userDetails/EmailSenderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/userDetails/UserDetailsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/userDetails/UserDetailsImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/userDetails/VerificationTokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taku/app/core/services/userDetails/VerificationTokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/config/WebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/controllers/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/controllers/AuthenticationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/controllers/SearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/controllers/SearchController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/controllers/SocialController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/controllers/SocialController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/models/email_verification/VerificationToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/models/email_verification/VerificationToken.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/models/feed/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/models/feed/Post.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/models/profile/ERelationships.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/models/profile/Images.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/models/profile/Images.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/models/profile/Profile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/models/profile/Profile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/models/users/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/models/users/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/payload/response/MessageResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/payload/response/MessageResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/repositories/ImageRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/repositories/ImageRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/repositories/ProfileRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/repositories/ProfileRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/repositories/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/repositories/VerificationTokenRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/repositories/VerificationTokenRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/services/images/AmazonClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/services/images/AmazonClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/services/profile/ProfileService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/services/profile/ProfileService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/services/profile/SocialService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/services/profile/SocialService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/services/userDetails/EmailSenderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/services/userDetails/EmailSenderService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/services/userDetails/UserDetailsImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/services/userDetails/UserDetailsImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Taku/app/core/services/userDetails/VerificationTokenService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taku/app/core/services/userDetails/VerificationTokenService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +70,8 @@
       <list>
         <option value="HTML File" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -119,18 +170,18 @@
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
     <state x="2650" y="327" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1597171483931" />
-    <state x="2600" y="131" key="#com.intellij.ide.util.MemberChooser" timestamp="1602132565172">
+    <state x="2600" y="131" key="#com.intellij.ide.util.MemberChooser" timestamp="1603861648063">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state x="2600" y="131" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1602132565172" />
+    <state x="2600" y="131" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1603861648063" />
     <state x="2529" y="268" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1596475490158">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
     <state x="2529" y="268" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596475490158" />
-    <state x="2546" y="450" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1596780398545">
+    <state x="2546" y="450" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1602561148859">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state x="2546" y="450" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596780398545" />
+    <state x="2546" y="450" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1602561148859" />
     <state x="2676" y="384" width="420" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1600050392000">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
@@ -147,25 +198,25 @@
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
     <state x="2659" y="265" key="FileChooserDialogImpl/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1601338300357" />
-    <state width="1877" height="315" key="GridCell.Tab.0.bottom" timestamp="1602274724462">
+    <state width="1877" height="315" key="GridCell.Tab.0.bottom" timestamp="1603981861091">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="315" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1602274724462" />
+    <state width="1877" height="315" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1603981861091" />
     <state width="1877" height="365" key="GridCell.Tab.0.bottom/0.0.1920.999/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596835068759" />
-    <state width="1877" height="315" key="GridCell.Tab.0.center" timestamp="1602274724462">
+    <state width="1877" height="315" key="GridCell.Tab.0.center" timestamp="1603981861091">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="315" key="GridCell.Tab.0.center/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1602274724462" />
+    <state width="1877" height="315" key="GridCell.Tab.0.center/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1603981861091" />
     <state width="1877" height="365" key="GridCell.Tab.0.center/0.0.1920.999/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596835068758" />
-    <state width="1877" height="315" key="GridCell.Tab.0.left" timestamp="1602274724462">
+    <state width="1877" height="315" key="GridCell.Tab.0.left" timestamp="1603981861091">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="315" key="GridCell.Tab.0.left/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1602274724462" />
+    <state width="1877" height="315" key="GridCell.Tab.0.left/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1603981861091" />
     <state width="1877" height="365" key="GridCell.Tab.0.left/0.0.1920.999/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596835068758" />
-    <state width="1877" height="315" key="GridCell.Tab.0.right" timestamp="1602274724462">
+    <state width="1877" height="315" key="GridCell.Tab.0.right" timestamp="1603981861091">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="315" key="GridCell.Tab.0.right/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1602274724462" />
+    <state width="1877" height="315" key="GridCell.Tab.0.right/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1603981861091" />
     <state width="1877" height="365" key="GridCell.Tab.0.right/0.0.1920.999/1920.5.1920.1040@1920.5.1920.1040" timestamp="1596835068759" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1598028576744">
       <screen x="1920" y="5" width="1920" height="1040" />
@@ -187,10 +238,6 @@
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
     <state x="2360" y="99" key="SettingsEditor/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1601338751409" />
-    <state x="2012" y="97" width="1736" height="856" key="dock-window-1" timestamp="1594519560472">
-      <screen x="1920" y="5" width="1920" height="1040" />
-    </state>
-    <state x="2012" y="97" width="1736" height="856" key="dock-window-1/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1594519560472" />
     <state x="2262" y="226" key="new project wizard" timestamp="1599501911492">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
@@ -203,10 +250,10 @@
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
     <state x="2536" y="243" key="run.anything.popup/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1602128747087" />
-    <state x="2543" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1597119184863">
+    <state x="2543" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1603861571082">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state x="2543" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1597119184863" />
+    <state x="2543" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1603861571082" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Taku_core$Taku_start.ic" NAME="Taku-start Coverage Results" MODIFIED="1596835062499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

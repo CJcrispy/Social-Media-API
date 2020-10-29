@@ -62,14 +62,14 @@ public class EmailSenderService {
     public ResponseEntity<String> retryEmail(String email){
 
         //Expire old token
-        List<VerificationToken> verificationTokens = verificationTokenRepository.findByUserEmail(email);
         User user = userRepository.findByEmailIgnoreCase(email);
+        List<VerificationToken> verificationTokens = verificationTokenRepository.findByUserEmail(email);
 
         if (verificationTokens.isEmpty()) {
             return ResponseEntity.badRequest().body("Invalid token.");
         }
 
-        VerificationToken verificationTokenz = user.getVerificationToken();
+        VerificationToken verificationTokenz = verificationTokenRepository.findByUserId(user.getId());
         if (verificationTokenz.getExpiredDate().before(new Date(System.currentTimeMillis()))) {
             return ResponseEntity.unprocessableEntity().body("Expired token.");
         }
@@ -82,7 +82,7 @@ public class EmailSenderService {
             return ResponseEntity.badRequest().body("Token already confirmed.");
         }
 
-        verificationTokenRepository.delete(user.getVerificationToken());
+        verificationTokenRepository.delete(verificationTokenz);
 
         //Create new token
         VerificationToken verificationToken;

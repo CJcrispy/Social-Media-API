@@ -16,7 +16,7 @@ public class VerificationToken {
     public static final long HOUR = 3600*1000;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, name="token_id")
     private Long tokenid;
 
@@ -36,8 +36,8 @@ public class VerificationToken {
     private Date confirmedDate;
 
     @ManyToOne(targetEntity = User.class, fetch = FetchType.EAGER,
-             cascade = CascadeType.DETACH)
-    @JoinColumn(nullable = false, name = "user_id")
+            cascade = CascadeType.DETACH)
+    @JoinColumn(name = "user_id")
     private User user;
 
     public VerificationToken(User user) {

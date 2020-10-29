@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-import Taku.app.core.models.profile.Profile;
 import Taku.app.core.models.users.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -31,8 +30,6 @@ public class UserDetailsImpl implements UserDetails {
 
     private boolean isVerified;
 
-    private Profile profile;
-
     private String bio;
 
     private String occupation;
@@ -42,8 +39,6 @@ public class UserDetailsImpl implements UserDetails {
     private long followers;
 
     private long following;
-
-    private User user;
 
     @JsonIgnore
     private String password;
@@ -156,14 +151,6 @@ public class UserDetailsImpl implements UserDetails {
         isVerified = verified;
     }
 
-    public Profile getProfile(){
-        return profile;
-    }
-
-    public void setProfile(Profile profile){
-        this.profile = profile;
-    }
-
     public String getBio() {
         return bio;
     }
@@ -184,9 +171,6 @@ public class UserDetailsImpl implements UserDetails {
         return following;
     }
 
-    public User getUser() {
-        return user;
-    }
 
     @Override
     public boolean equals(Object o) {

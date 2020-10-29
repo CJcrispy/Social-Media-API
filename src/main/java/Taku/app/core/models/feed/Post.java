@@ -4,7 +4,6 @@ import Taku.app.core.models.users.User;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
-import java.util.Date;
 import java.time.Instant;
 
 @Entity

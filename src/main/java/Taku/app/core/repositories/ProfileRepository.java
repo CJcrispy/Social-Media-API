@@ -11,10 +11,6 @@ import java.util.List;
 @Repository
 public interface ProfileRepository extends JpaRepository<Profile, Long> {
 
-    List<Profile> findByLink(String link);
-
-    List<Profile> findByProfileId(Long id);
-
-    Profile findByUser(User user);
+    Profile findByUser(Long id);
 
 }

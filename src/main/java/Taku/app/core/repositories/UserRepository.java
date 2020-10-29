@@ -3,6 +3,7 @@ package Taku.app.core.repositories;
 import java.util.List;
 import java.util.Optional;
 
+import Taku.app.core.models.email_verification.VerificationToken;
 import Taku.app.core.models.users.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -23,15 +24,13 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Query ("SELECT COUNT(*) FROM User")
     long grabTableRowCount();
 
-    @Query (value = "SELECT * FROM users u OFFSET floor(random()*:n) LIMIT 1",
+    @Query (value = "select * from users u3 left join user_roles ur on u3.id = ur.user_id where ur.role_id = 2 or ur.role_id =1 order by random() limit 3",
             nativeQuery = true)
-    List<User> grabRandomTableRows(@Param("n") long n);
+    List<User> grabRandomTableRows();
 
-    @Query (value = "select * from users where id = all (select user_id from user_roles where role_id = 2)",
-            nativeQuery = true)
-    List<User> grabRandomBusinessTableRows(@Param("n") long n);
+    @Query(value = "select * from users u3 left join user_roles ur on u3.id = ur.user_id where ur.role_id = 2", nativeQuery = true)
+    List<User> grabBusinessUsers();
 
-    @Query (value = "select * from users where id = all (select user_id from user_roles where role_id = 1)",
-            nativeQuery = true)
-    List<User> grabRandomMemberTableRows(@Param("n") long n);
+    @Query(value = "select * from users u2 left join user_roles ur on u2.id = ur.user_id where ur.role_id = 1", nativeQuery = true)
+    List<User> grabMemberUsers();
 }

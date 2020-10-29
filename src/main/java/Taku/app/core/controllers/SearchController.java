@@ -2,6 +2,7 @@ package Taku.app.core.controllers;
 
 import Taku.app.core.services.profile.SocialService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,25 +16,16 @@ public class SearchController{
 
     @GetMapping("/discoverPage")
     public ResponseEntity<?> discoverPage(){
-
-        socialService.test();
-
-        return null;
+        return new ResponseEntity<>(socialService.search_random_users(), HttpStatus.OK);
     }
 
     @GetMapping("/business/profile")
     public ResponseEntity<?> discoverBusiness(){
-
-        socialService.test_business();
-
-        return null;
+        return new ResponseEntity<>(socialService.search_business(), HttpStatus.OK);
     }
 
     @GetMapping("/member/profile")
     public ResponseEntity<?> discoverMember(){
-
-        socialService.test_member();
-
-        return null;
+        return new ResponseEntity<>(socialService.search_member(), HttpStatus.OK);
     }
 }

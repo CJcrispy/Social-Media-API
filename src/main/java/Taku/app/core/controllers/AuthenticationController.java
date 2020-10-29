@@ -1,20 +1,22 @@
 package Taku.app.core.controllers;
 
 import Taku.app.core.models.email_verification.VerificationToken;
-import Taku.app.core.models.profile.Profile;
-import Taku.app.core.models.users.*;
+import Taku.app.core.models.users.ERole;
+import Taku.app.core.models.users.Roles;
+import Taku.app.core.models.users.User;
 import Taku.app.core.payload.request.*;
-import Taku.app.core.payload.response.*;
-import Taku.app.core.repositories.*;
+import Taku.app.core.payload.response.JwtResponse;
+import Taku.app.core.payload.response.MessageResponse;
+import Taku.app.core.repositories.RoleRepository;
+import Taku.app.core.repositories.UserRepository;
+import Taku.app.core.repositories.VerificationTokenRepository;
 import Taku.app.core.security.JwtUtils;
 import Taku.app.core.services.profile.ProfileService;
 import Taku.app.core.services.userDetails.EmailSenderService;
 import Taku.app.core.services.userDetails.UserDetailsImpl;
-import Taku.app.core.models.users.User;
 import Taku.app.core.services.userDetails.VerificationTokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -26,6 +28,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.validation.Valid;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -226,7 +229,7 @@ public class AuthenticationController {
     }
 
     @PostMapping("/retry-validation")
-    public  ResponseEntity<?> retryEmailValidation(@Valid @RequestBody RequestByEmail requestByEmail,
+    public ResponseEntity<?> retryEmailValidation(@Valid @RequestBody RequestByEmail requestByEmail,
                                                    ModelAndView modelAndView){
         if (userRepository.existsByEmail(requestByEmail.getEmail())){
 
@@ -242,6 +245,12 @@ public class AuthenticationController {
         return ResponseEntity.ok(new MessageResponse("retry email validation link completed successfully!"));
     }
 
+    @PostMapping("/changePassword/{id}")
+    public ResponseEntity<?> changePassword(@Valid @RequestBody PasswordResetRequest passwordResetRequest,
+                                            @PathVariable @RequestBody Long id){
+        profileService.changePassword(passwordResetRequest.getNew_password(), id);
 
+        return ResponseEntity.ok(new MessageResponse("Password reset successfully!"));
+    }
 
 }

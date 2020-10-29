@@ -58,7 +58,7 @@ public class SocialController {
 
         if (userRepository.existsByEmail(requestByEmail.getEmail())) {
             User user = userRepository.findByEmailIgnoreCase(requestByEmail.getEmail());
-            Profile profile = profileRepository.findByUser(user);
+            Profile profile = profileRepository.findByUser(user.getId());
 
             return null;
 
@@ -169,20 +169,29 @@ public class SocialController {
 
 
     //Pictures
-    @PostMapping("/uploadProfilePic")
+    @PostMapping("/uploadProfilePic/{id}")
     @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
-    public String uploadProfilePic(@RequestPart(value = "file") MultipartFile file) {
-        return this.amazonClient.uploadFile(file);
+    public String uploadProfilePic(@RequestPart(value = "file") MultipartFile file,
+                                   @PathVariable @RequestBody Long id) {
+        return this.amazonClient.uploadProfilePic(file, id);
     }
 
-    @PostMapping("/uploadPhoto")
+    @PostMapping("/uploadCoverImage/{id}")
     @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
-    public String uploadPhoto(@RequestPart(value = "file") MultipartFile file){
-        return this.amazonClient.uploadFile(file);
+    public String uploadCoverImage(@RequestPart(value = "file") MultipartFile file,
+                                   @PathVariable @RequestBody Long id) {
+        return this.amazonClient.uploadCoverImage(file, id);
+    }
+
+    @PostMapping("/uploadPhoto/{id}")
+    @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
+    public String uploadPhoto(@RequestPart(value = "file") MultipartFile file,
+                              @PathVariable @RequestBody Long id){
+        return this.amazonClient.uploadFile(file, id);
     }
 
     @DeleteMapping("/deletePhoto")
-    @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
+    @PreAuthorize("hasRole('Admin')")
     public String deleteFile(@RequestPart(value = "url") String fileUrl) {
         return this.amazonClient.deleteFileFromS3Bucket(fileUrl);
     }
