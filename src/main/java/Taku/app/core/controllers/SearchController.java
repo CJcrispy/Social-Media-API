@@ -28,4 +28,9 @@ public class SearchController{
     public ResponseEntity<?> discoverMember(){
         return new ResponseEntity<>(socialService.search_member(), HttpStatus.OK);
     }
+
+    @GetMapping("/user={id}")
+    public ResponseEntity<?> findUser(@PathVariable @RequestBody Long id){
+        return new ResponseEntity<>(socialService.find_user(id), HttpStatus.OK);
+    }
 }

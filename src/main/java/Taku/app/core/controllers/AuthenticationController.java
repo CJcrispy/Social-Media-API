@@ -79,18 +79,7 @@ public class AuthenticationController {
                 .collect(Collectors.toList());
 
         return ResponseEntity.ok(new JwtResponse(jwt,
-                userDetails.getId(),
-                userDetails.getFirst_name(),
-                userDetails.getLast_name(),
-                userDetails.getBusiness_name(),
-                userDetails.getEmail(),
-                userDetails.isVerified(),
-                userDetails.getBio(),
-                userDetails.getOccupation(),
-                userDetails.getLink(),
-                userDetails.getFollowers(),
-                userDetails.getFollowing(),
-                roles));
+                userDetails.getId()));
     }
 
     @PostMapping("/register-member")

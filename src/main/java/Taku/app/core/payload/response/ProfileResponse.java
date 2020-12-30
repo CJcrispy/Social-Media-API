@@ -25,7 +25,7 @@ public class ProfileResponse {
     private String link;
 
     public ProfileResponse(Long id, String username, String first_name,
-                           String last_name, String business_name, String email, boolean verified,
+                           String last_name, String business_name, String email,
                            String bio, String occupation,
                            long followers, long following,
                            String link) {
@@ -35,7 +35,6 @@ public class ProfileResponse {
         this.last_name = last_name;
         this.business_name = business_name;
         this.email = email;
-        this.isVerified = verified;
         this.bio = bio;
         this.occupation = occupation;
         this.followers = followers;

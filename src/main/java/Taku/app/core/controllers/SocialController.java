@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -52,25 +53,28 @@ public class SocialController {
     NetworkRepository networkRepository;
 
     //Profile
-    @GetMapping("/retrieveProfile")
-    @PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
-    public ResponseEntity<?> getProfile(@Valid @RequestBody RequestByEmail requestByEmail) {
+    @GetMapping("/retrieveProfile/{id}")
+    //@PreAuthorize("hasRole('member') or hasRole('business') or hasRole('Admin')")
+    public ResponseEntity<?> getProfile(@PathVariable @RequestBody Long id) {
 
-        if (userRepository.existsByEmail(requestByEmail.getEmail())) {
-            User user = userRepository.findByEmailIgnoreCase(requestByEmail.getEmail());
-            Profile profile = profileRepository.findByUser(user.getId());
+        try {
+            Optional<User> person = userRepository.findById(id);
+            User user = person.get();
+            if (userRepository.existsByEmail(user.getEmail()) == true) {
+                Profile profile = profileRepository.findByUser(user.getId());
 
-            return null;
-
-//            return ResponseEntity.ok(new ProfileResponse(
-//                    user.getId(), user.getFirst_name(), user.getLast_name(),
-//                    user.getBusiness_name(), user.getEmail(), user.isVerified(),
-//                    profile.getBio(), profile.getOccupation(),
-//                    profile.getFollowers(), profile.getFollowing(), profile.getLink()));
-        }else{
-            return ResponseEntity.badRequest().body(new MessageResponse("Error: User does not exist!"));
+                return ResponseEntity.ok(new ProfileResponse(
+                        user.getId(),user.getUsername() ,user.getFirst_name(), user.getLast_name(),
+                        user.getBusiness_name(), user.getEmail(),
+                        profile.getBio(), profile.getOccupation(),
+                        profile.getFollowers(), profile.getFollowing(), profile.getLink()));
+            } else {
+                return ResponseEntity.badRequest().body(new MessageResponse("Error: User does not exist!"));
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            return ResponseEntity.badRequest().body(new MessageResponse("Error: Something with wrong"));
         }
-
 
     }
 

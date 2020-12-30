@@ -61,7 +61,7 @@ logging:
 taku:
   app:
     jwtSecret: bezKoderSecretKey
-    jwtExpirationMs: 86400000
+    jwtExpirationMs: 172800000
 
 # AWS Properties
 amazonProperties:
