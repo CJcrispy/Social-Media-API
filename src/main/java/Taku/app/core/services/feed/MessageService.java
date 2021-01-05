@@ -11,6 +11,7 @@ import Taku.app.core.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -49,7 +50,8 @@ public class MessageService {
         List<Messages> conversation = messageRepository.findByRecipientOrSenderOrderByPostedDesc(sender, recipient);
         if( conversation.isEmpty() || conversation.get(0) == null){
             //creates new conversation
-            Total_messages total_messages = new Total_messages(1);
+            Long[] conversation_members = {sender.getId(),recipient.getId()};
+            Total_messages total_messages = new Total_messages(1, conversation_members );
             Messages messages = new Messages(messageRequest.getMessage(), sender, recipient, total_messages);
             conversationRepository.save(total_messages);
             return messageRepository.save(messages);
