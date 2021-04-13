@@ -24,7 +24,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Query ("SELECT COUNT(*) FROM User")
     long grabTableRowCount();
 
-    @Query (value = "select * from users u3 left join user_roles ur on u3.id = ur.user_id where ur.role_id = 2 or ur.role_id =1 order by random() limit 3",
+    @Query (value = "select * from users u3 left join user_roles ur on u3.id = ur.user_id where ur.role_id = 2 or ur.role_id =1 order by random()",
             nativeQuery = true)
     List<User> grabRandomTableRows();
 

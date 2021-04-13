@@ -3,9 +3,9 @@ spring:
     name: Taku-app
 
   datasource:
-    username: TacoTaku
-    password: blackLivesMatter23!
-    url: jdbc:postgresql://takudatabase.cysbl2jmgwqw.us-east-1.rds.amazonaws.com:5432/Taku
+    username:
+    password:
+    url:
 
     jpa:
       hibernate:
@@ -28,9 +28,9 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: digisoul.bot
-    password: goldenblue23!
-    verificationapi: http://localhost:4200/verify-email?code=
+    username:
+    password:
+    verificationapi:
     properties:
       mail:
         smtp:
@@ -60,14 +60,14 @@ logging:
 # App Properties
 taku:
   app:
-    jwtSecret: bezKoderSecretKey
-    jwtExpirationMs: 172800000
+    jwtSecret:
+    jwtExpirationMs:
 
 # AWS Properties
 amazonProperties:
-  endpointUrl: http://taku-images.s3-website-us-east-1.amazonaws.com
-  accessKey: AKIAVX4MEN2AO7B3WPKC
-  secretKey: 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
-  bucketName: taku-images
+  endpointUrl:
+  accessKey:
+  secretKey:
+  bucketName:
 
 
