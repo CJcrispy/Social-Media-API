@@ -1,0 +1,73 @@
+spring:
+  application:
+    name: Taku-app
+
+  datasource:
+    username: TacoTaku
+    password: blackLivesMatter23!
+    url: jdbc:postgresql://takudatabase.cysbl2jmgwqw.us-east-1.rds.amazonaws.com:5432/Taku
+
+    jpa:
+      hibernate:
+        ddl-auto: update
+
+  jpa:
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+
+    show-sql: true
+
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+
+  freemarker:
+    template-loader-path: classpath:/templates
+    suffix: .ftl
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: digisoul.bot
+    password: goldenblue23!
+    verificationapi: http://localhost:4200/verify-email?code=
+    properties:
+      mail:
+        smtp:
+          ssl:
+            trust: smtp.gmail.com
+          starttls:
+            enable: true
+            required: true
+          auth: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+
+server:
+   port: 8081
+
+logging:
+  level:
+    org:
+      springframework: WARN
+      hibernate: WARN
+  com:
+    springsecurity:
+      demo: DEBUG
+
+
+# App Properties
+taku:
+  app:
+    jwtSecret: bezKoderSecretKey
+    jwtExpirationMs: 172800000
+
+# AWS Properties
+amazonProperties:
+  endpointUrl: http://taku-images.s3-website-us-east-1.amazonaws.com
+  accessKey: AKIAVX4MEN2AO7B3WPKC
+  secretKey: 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
+  bucketName: taku-images
+
+

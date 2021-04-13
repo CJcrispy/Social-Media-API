@@ -1,0 +1,73 @@
+spring:
+  application:
+    name: Taku-app
+
+  datasource:
+    username:
+    password:
+    url:
+
+    jpa:
+      hibernate:
+        ddl-auto: update
+
+  jpa:
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+
+    show-sql: true
+
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+
+  freemarker:
+    template-loader-path: classpath:/templates
+    suffix: .ftl
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username:
+    password:
+    verificationapi:
+    properties:
+      mail:
+        smtp:
+          ssl:
+            trust: smtp.gmail.com
+          starttls:
+            enable: true
+            required: true
+          auth: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+
+server:
+   port: 8081
+
+logging:
+  level:
+    org:
+      springframework: WARN
+      hibernate: WARN
+  com:
+    springsecurity:
+      demo: DEBUG
+
+
+# App Properties
+taku:
+  app:
+    jwtSecret:
+    jwtExpirationMs:
+
+# AWS Properties
+amazonProperties:
+  endpointUrl:
+  accessKey:
+  secretKey:
+  bucketName:
+
+

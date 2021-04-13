@@ -1,62 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f9d3ac59-355a-4a29-9453-a0ced116c11c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/controllers/TestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/models/ERole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/models/Roles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/models/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/payload/request/LoginRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/payload/request/RegisterRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/payload/response/JwtResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/payload/response/MessageResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/repositories/RoleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/repositories/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/security/AuthEntryPointJwt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/security/AuthTokenFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/security/JwtUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/services/UserDetailsImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/services/UserDetailsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/services/UserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/DTO/BusinessDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/DTO/LoginDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/DTO/MemberDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/DTO/TokenDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/config/HibernateConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/config/HibernateConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/controllers/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Soko/app/core/controllers/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/entities/Business.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/entities/BusinessToken.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/entities/Member.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/entities/MemberToken.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/entities/Roles.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/repositories/BusinessRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/repositories/MemberRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/repositories/TokenRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soko/app/core/services/AuthenticationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/DTO/BusinessDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/DTO/LoginDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/DTO/MemberDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/DTO/TokenDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/config/HibernateConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Soko/app/core/config/HibernateConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Soko/app/core/config/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/controllers/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Soko/app/core/controllers/AuthenticationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/entities/Business.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/entities/BusinessToken.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/entities/Member.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/entities/MemberToken.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/entities/Roles.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/repositories/BusinessRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/repositories/MemberRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/repositories/TokenRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Soko/app/core/services/AuthenticationService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f9d3ac59-355a-4a29-9453-a0ced116c11c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,7 +10,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -90,33 +37,40 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="Soko.app.core.services" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Chris\Documents\Github\Taku-core\src\main\resources\config" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="core.controllers" />
       <recent name="core" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Chris\Documents\Github\Taku-core" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="C:\Users\Chris\Documents\Github\Soko-core\src\main\java\core" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Soko-start" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="Soko.app.core.Application" />
-      <module name="Soko-core" />
+    <configuration name="Taku-start" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Taku.app.core.Application" />
+      <module name="Taku-core" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -147,76 +101,77 @@
     </task>
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="320" y="103" width="811" height="669" key="#Project_Structure" timestamp="1593480434622">
-      <screen x="0" y="23" width="1440" height="816" />
-    </state>
-    <state x="320" y="103" width="811" height="669" key="#Project_Structure/0.23.1440.816@0.23.1440.816" timestamp="1593480434622" />
-    <state x="2165" y="103" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595433341237">
-      <screen x="1920" y="5" width="1920" height="1040" />
-    </state>
-    <state x="2165" y="103" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595433341237" />
-    <state x="184" y="100" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.816@0.23.1440.816" timestamp="1593480384507" />
-    <state x="2650" y="327" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595563972670">
-      <screen x="1920" y="5" width="1920" height="1040" />
-    </state>
-    <state x="2650" y="327" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595563972670" />
-    <state x="2885" y="132" key="#com.intellij.ide.util.MemberChooser" timestamp="1595647974451">
-      <screen x="1920" y="5" width="1920" height="1040" />
-    </state>
-    <state x="2885" y="132" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595647974451" />
-    <state x="2529" y="268" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1595433339347">
-      <screen x="1920" y="5" width="1920" height="1040" />
-    </state>
-    <state x="2529" y="268" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595433339347" />
-    <state x="457" y="229" key="#com.intellij.ide.util.TreeClassChooserDialog/0.23.1440.816@0.23.1440.816" timestamp="1593480357667" />
-    <state x="626" y="445" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1592182394974">
+    <state x="455" y="329" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606460891687">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="626" y="445" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040/1920.5.1920.1040@0.0.1920.1040" timestamp="1592182394974" />
-    <state x="2425" y="5" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1594531408915">
+    <state x="455" y="329" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.5.1920.1040@0.0.1920.1040" timestamp="1606460891687" />
+    <state x="680" y="126" key="#com.intellij.ide.util.MemberChooser" timestamp="1609638425640">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="680" y="126" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.6.1920.1040@0.0.1920.1040" timestamp="1609638425640" />
+    <state x="2600" y="131" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1603861648063" />
+    <state width="1877" height="526" key="GridCell.Tab.0.bottom" timestamp="1612242664322">
+      <screen x="-1920" y="6" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="300" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040/-3286.0.1366.728@0.0.1920.1040" timestamp="1608525266676" />
+    <state width="1877" height="302" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@-1920.0.1920.1040" timestamp="1609285155992" />
+    <state width="1877" height="302" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@0.0.1920.1040" timestamp="1609302808559" />
+    <state width="1877" height="526" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.6.1920.1040@-1920.6.1920.1040" timestamp="1612242664322" />
+    <state width="1877" height="304" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.6.1920.1040@0.0.1920.1040" timestamp="1612157770187" />
+    <state width="1877" height="300" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.8.1920.1040@0.0.1920.1040" timestamp="1608166233348" />
+    <state width="1353" height="298" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.5.1920.1040@0.0.1920.1040" timestamp="1606576797664" />
+    <state width="1877" height="561" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1606460722959" />
+    <state width="1877" height="526" key="GridCell.Tab.0.center" timestamp="1612242664322">
+      <screen x="-1920" y="6" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="300" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040/-3286.0.1366.728@0.0.1920.1040" timestamp="1608525266676" />
+    <state width="1877" height="302" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@-1920.0.1920.1040" timestamp="1609285155992" />
+    <state width="1877" height="302" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@0.0.1920.1040" timestamp="1609302808559" />
+    <state width="1877" height="526" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.6.1920.1040@-1920.6.1920.1040" timestamp="1612242664322" />
+    <state width="1877" height="304" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.6.1920.1040@0.0.1920.1040" timestamp="1612157770187" />
+    <state width="1877" height="300" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.8.1920.1040@0.0.1920.1040" timestamp="1608166233347" />
+    <state width="1353" height="298" key="GridCell.Tab.0.center/0.0.1920.1040/1920.5.1920.1040@0.0.1920.1040" timestamp="1606576797662" />
+    <state width="1877" height="561" key="GridCell.Tab.0.center/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1606460722959" />
+    <state width="1877" height="526" key="GridCell.Tab.0.left" timestamp="1612242664321">
+      <screen x="-1920" y="6" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="300" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040/-3286.0.1366.728@0.0.1920.1040" timestamp="1608525266675" />
+    <state width="1877" height="302" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@-1920.0.1920.1040" timestamp="1609285155992" />
+    <state width="1877" height="302" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@0.0.1920.1040" timestamp="1609302808559" />
+    <state width="1877" height="526" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.6.1920.1040@-1920.6.1920.1040" timestamp="1612242664321" />
+    <state width="1877" height="304" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.6.1920.1040@0.0.1920.1040" timestamp="1612157770186" />
+    <state width="1877" height="300" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.8.1920.1040@0.0.1920.1040" timestamp="1608166233347" />
+    <state width="1353" height="298" key="GridCell.Tab.0.left/0.0.1920.1040/1920.5.1920.1040@0.0.1920.1040" timestamp="1606576797662" />
+    <state width="1877" height="561" key="GridCell.Tab.0.left/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1606460722959" />
+    <state width="1877" height="526" key="GridCell.Tab.0.right" timestamp="1612242664322">
+      <screen x="-1920" y="6" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="300" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040/-3286.0.1366.728@0.0.1920.1040" timestamp="1608525266676" />
+    <state width="1877" height="302" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@-1920.0.1920.1040" timestamp="1609285155992" />
+    <state width="1877" height="302" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@0.0.1920.1040" timestamp="1609302808559" />
+    <state width="1877" height="526" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.6.1920.1040@-1920.6.1920.1040" timestamp="1612242664322" />
+    <state width="1877" height="304" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.6.1920.1040@0.0.1920.1040" timestamp="1612157770187" />
+    <state width="1877" height="300" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.8.1920.1040@0.0.1920.1040" timestamp="1608166233347" />
+    <state width="1353" height="298" key="GridCell.Tab.0.right/0.0.1920.1040/1920.5.1920.1040@0.0.1920.1040" timestamp="1606576797663" />
+    <state width="1877" height="561" key="GridCell.Tab.0.right/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1606460722959" />
+    <state x="490" y="174" key="Maven.ArtifactSearchDialog" timestamp="1608845559426">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="490" y="174" key="Maven.ArtifactSearchDialog/0.0.1920.1040/-1920.6.1920.1040@0.0.1920.1040" timestamp="1608845559426" />
+    <state x="2360" y="99" key="SettingsEditor" timestamp="1606460248434">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state x="2425" y="5" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1594531408915" />
-    <state width="1877" height="333" key="GridCell.Tab.0.bottom" timestamp="1595697792161">
+    <state x="2360" y="99" key="SettingsEditor/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1606460248434" />
+    <state x="2543" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1603861571082">
       <screen x="1920" y="5" width="1920" height="1040" />
     </state>
-    <state width="1877" height="333" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595697792161" />
-    <state width="1877" height="333" key="GridCell.Tab.0.center" timestamp="1595697792161">
-      <screen x="1920" y="5" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="333" key="GridCell.Tab.0.center/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595697792161" />
-    <state width="1877" height="333" key="GridCell.Tab.0.left" timestamp="1595697792161">
-      <screen x="1920" y="5" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="333" key="GridCell.Tab.0.left/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595697792161" />
-    <state width="1877" height="333" key="GridCell.Tab.0.right" timestamp="1595697792161">
-      <screen x="1920" y="5" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="333" key="GridCell.Tab.0.right/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595697792161" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1595440226950">
-      <screen x="1920" y="5" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595440226950" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1595440226950">
-      <screen x="1920" y="5" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595440226950" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1595440226950">
-      <screen x="1920" y="5" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595440226950" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1595440226950">
-      <screen x="1920" y="5" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595440226950" />
-    <state x="2012" y="97" width="1736" height="856" key="dock-window-1" timestamp="1594519560472">
-      <screen x="1920" y="5" width="1920" height="1040" />
-    </state>
-    <state x="2012" y="97" width="1736" height="856" key="dock-window-1/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1594519560472" />
-    <state x="2262" y="226" key="new project wizard" timestamp="1595275954091">
-      <screen x="1920" y="5" width="1920" height="1040" />
-    </state>
-    <state x="2262" y="226" key="new project wizard/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1595275954091" />
+    <state x="2543" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.5.1920.1040@1920.5.1920.1040" timestamp="1603861571082" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Taku_core$Taku_start.ic" NAME="Taku-start Coverage Results" MODIFIED="1596835062499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
