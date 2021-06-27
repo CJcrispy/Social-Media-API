@@ -1,0 +1,65 @@
+resource_types:
+- name: slack-notification
+  type: docker-image
+  source:
+    repository: cfcommunity/slack-notification-resource
+- name: webhook-notification
+  type: docker-image
+  source:
+    repository: flavorjones/webhook-notification-resource
+
+groups:
+  - name: dev-flow
+    jobs:
+      - postman_regression
+  - name: prod-flow
+    jobs:
+      - discord
+
+resources:
+  - name: source-code-resource
+    type: git
+    icon: github-circle
+    source: &repo-source
+      uri: ((git-app-url))
+      branch: ((git-dev-branch))
+      username: ((git-username))
+      password: ((git-password))
+  - name: discord-channel
+    type: webhook-notification
+    source:
+      adapter: DiscordAdapter
+      url: ((discord-token))
+
+jobs:      
+  - name: discord
+    plan:
+    - put: discord-channel
+      params: { status: pending }
+    - put: discord-channel
+      params: { status: started }
+    - put: discord-channel
+      params: { status: failed }
+    - put: discord-channel
+      params: { status: errored }
+    - put: discord-channel
+      params: { status: aborted }
+    - put: discord-channel
+      params: { status: xyzzy } # unknown
+    - put: discord-channel
+      params: { status: succeeded }
+  - name: postman_regression
+    plan:
+      - get: repository
+        resource: source-code-resource
+      - task: run-api
+        file: source-code-resource/ci/tasks/run_postman_collection.yaml
+    on_success:
+      put: discord-channel
+      params: { status: "succeeded" }
+    on_failure: { put: discord-channel, params: { status: "failed" } }
+    on_error:
+      put: discord-channel
+      params: { status: errored }
+    on_abort: { put: discord-channel, params: { status: "aborted" } }
+ 

@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f9d3ac59-355a-4a29-9453-a0ced116c11c" name="Default Changelist" comment="" />
+    <list default="true" id="f9d3ac59-355a-4a29-9453-a0ced116c11c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ci/config.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ci/pipeline.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ci/scripts/run_postman_collection.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ci/tasks/run_postman_collection" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,17 +59,17 @@
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="Soko.app.core.services" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Chris\Documents\Github\Taku-core\src\main\resources\config" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Chris\Documents\Github\Taku-core" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="C:\Users\Chris\Documents\Github\Soko-core\src\main\java\core" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="core.controllers" />
       <recent name="core" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Chris\Documents\Github\Taku-core" />
-      <recent name="$PROJECT_DIR$/src/main/resources" />
-      <recent name="C:\Users\Chris\Documents\Github\Soko-core\src\main\java\core" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Chris\Documents\Github\Taku-core\src\main\resources\config" />
     </key>
   </component>
   <component name="RunManager">

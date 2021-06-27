@@ -1,0 +1,10 @@
+---
+git-app-url: https://github.com/CJcrispy/blue-nexus-login-register.git
+git-dev-branch: develop
+git-master-branch: master
+git-concourse-url:
+git-username: CJcrispy
+git-password: Fightinggold20!
+
+discord-token:  https://discordapp.com/api/webhooks/804166012940976208/8pp3au7Bv4v1TP6OV5MSLKKNYtPv6EcGyYgd7OXOOummjH4envwHMBBIk4RnYnuWvIU6
+channel_id: 804168234155900948
